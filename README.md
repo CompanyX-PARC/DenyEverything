@@ -3,10 +3,12 @@ CompanyX - DenyEverything
 
 Senior Project Repo
 
-Michael Garrett (mrgarrett)<br>
-Cody Jackson<br>
-Paul Lordier<br>
-Chris Neal<br>
+|   Employee Name   | GitHub Alias |
+| ----------------- | ------------ |
+|  Michael Garrett  |  mrgarrett   |
+|   Cody Jackson    |              |
+|   Paul Lordier    |              |
+|    Chris Neal     |              |
 
 Client: PARC
 
