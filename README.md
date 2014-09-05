@@ -3,10 +3,10 @@ CompanyX - DenyEverything
 
 Senior Project Repo
 
-Michael Garrett (mrgarrett)
-Cody Jackson
-Paul Lordier
-Chris Neal
+Michael Garrett (mrgarrett)<br>
+Cody Jackson<br>
+Paul Lordier<br>
+Chris Neal<br>
 
 Client: PARC
 
