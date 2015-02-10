@@ -6,7 +6,7 @@ Senior Project Repo
 |   Employee Name   | GitHub Alias |
 | :-----------------: | :------------: |
 |  Michael Garrett  |  mrgarrett   |
-|   Cody Jackson    |  LordMalloc  |
+|   Cody Jackson    |  JacksonTech |
 |   Paul Lordier    |              |
 |    Chris Neal     |              |
 
