@@ -8,7 +8,7 @@ Senior Project Repo
 |  Michael Garrett  |  mrgarrett   |
 |   Cody Jackson    |  JacksonTech |
 |   Paul Lordier    |              |
-|    Chris Neal     |              |
+|    Chris Neal     |   cneal116   |
 
 Client: PARC
 
