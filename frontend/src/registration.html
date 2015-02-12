@@ -12,18 +12,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <section class="container">
-    <div class="login">
-      <h1>Login to PARC</h1>
-      <form method="post" action="index.html">
-        <p><input type="text" name="login" value="" placeholder="Email"></p>
+    <div class="Register">
+      <h1>Account Registration</h1>
+      <form method="post" action="registration.html">
+        <p><input type="text" name="Register" value="" placeholder="Email"></p>
         <p><input type="password" name="password" value="" placeholder="Password"></p>
-        <p class="submit"><input type="submit" name="commit" value="Sign In"></p>
-        <p class="submit"><input type="submit" name="signup" value="Sign Up"></p>
+        <div class="register-help">
+			<p>Please re-enter your password below.</p>
+		</div>
+		<p><input type="password" name="password" value="" placeholder="Verify Password"></p>
+		<p class="submit"><input type="submit" name="commit" value="Register"></p>
       </form>
     </div>
-    <div class="login-help">
-      <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
-    </div>
+  
   </section>
 </body>
 </html>
