@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Welcome to PARC - Sac State</title>
+  <title>Register with PARC - Sac State</title>
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <!--link rel="stylesheet" href="css/style.css"-->
   <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script-->
@@ -12,19 +12,61 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <section class="container">
+  
+	<!-- Fancy top bar! -->
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <img class="img-responsive" src="assets/imgs/concordia.jpg">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Concordia</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  
+	<!-- Main frame contents -->
     <div class="Register">
-      <h1>Account Registration</h1>
-      <form method="post" action="registration.html">
-        <p><input type="text" name="Register" value="" placeholder="Email"></p>
-        <p><input type="password" name="password" value="" placeholder="Password"></p>
-        <div class="register-help">
-			<p>Please re-enter your password below.</p>
-		</div>
+	</br></br>
+	<form class="form-register">
+		<h2 class="form-register-heading">Please enter your email and desired password</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+			<div class="register-help">
+				<p>Please re-enter your password below.</p>
+			</div>
+		<label for="inputPasswordAgain" class="sr-only">Password</label>
+        <input type="password" id="inputPasswordAgain" class="form-control" placeholder="Password" required>
+			
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+	</form>
+	
+	<!--
+		<h1>Account Registration</h1>
+		<form method="post" action="registration.html">
+		<p><input type="text" name="Register" value="" placeholder="Email"></p>
+		<p><input type="password" name="password" value="" placeholder="Password"></p>
+			<div class="register-help">
+				<p>Please re-enter your password below.</p>
+			</div>
 		<p><input type="password" name="password" value="" placeholder="Verify Password"></p>
 		<p class="submit"><input type="submit" name="commit" value="Register"></p>
-      </form>
+		</form>
     </div>
-  
+	-->
   </section>
 </body>
 </html>
