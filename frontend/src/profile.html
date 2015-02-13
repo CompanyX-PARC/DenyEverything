@@ -10,13 +10,17 @@
 </head>
 
 <body>
-<div class="container col-sm-8 col-sm-offset-2">
+<div class="container">
+    <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
 <h1>Please fill out the following form.</h1>
 <form role="form">
     <fieldset>
         <legend>Mandatory Information</legend>
     <div class="form-group">
-    <select id="classLevel" class="form-control" >
+        
+    <select id="classLevel" class="form-control">
+        <option id="placeholder">Select your grade level...</option>
         <option id="freshman">Freshman (1st year)</option>    
         <option id="junior">Junior (2nd year)</option>    
         <option id="sophmore">Sophmore (3rd year)</option>
@@ -34,11 +38,11 @@
     </div>
 
     <div class="form-group">
-    <input type="text" class="form-control" id="minor" placeholder="Minor...">
+    <input type="text" class="form-control" id="minor" placeholder="Your Minor...">
     </div>
 
     <div class="form-group">
-    <input type="text" class="form-control" id="why" placeholder="Whyyyyyyyyyyyyyyyyy...">
+    <input type="text" class="form-control" id="why" placeholder="Why are you seeking PARC services?">
     </div>
 
     <div class="form-group">
@@ -46,11 +50,10 @@
     </div>
     </fieldset>
     
-Providing the following information voluntary; it may be used by the department for program effectively assessment and research. It won't be shared with anyone else. You can <a href="#skip">skip these questions if you want.</a>
-    
     <fieldset>
     <legend>Optional Information</legend>
-    
+        <div class="form-group">Providing the following information is voluntary; it may be used by the department for program effectively assessment and research. It won't be shared with anyone else. </div>
+        
     <div class="form-group">
     <input type="text" class="form-control" id="gender" placeholder="Gender...">
     </div>
@@ -90,10 +93,22 @@ Providing the following information voluntary; it may be used by the department 
     <div class="form-group">
     <textarea id="howhear" class="form-control" placeholder="How did you first hear about PARC?"></textarea></div>
          </fieldset>
+    <fieldset>
+    <div class="form-group">
     <input type="submit" class="btn btn-primary" id="submit" value="Next Step!">
+    </div>
+    </fieldset>
 </form>
 </div>
-
+        </div>
+    </div>
+<footer>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+                <a href="http://csus.edu/parc">PARC home</a></div> 
+        </div>
+    </div>
+</footer>
 </body>
-
 </html> 
