@@ -19,7 +19,7 @@
         <legend>Mandatory Information</legend>
     <div class="form-group">
         
-    <select name="classLevel" class="form-control">
+    <select name="classLevel" class="form-control" required>
         <option value="placeholder">Select your grade level...</option>
         <option value="freshman">Freshman (1st year)</option>    
         <option value="junior">Junior (2nd year)</option>    
@@ -29,23 +29,23 @@
     </div>
 
     <div class="form-group">
-    <input type="text" class="form-control" name="gradSemester" placeholder="Estimated semester of graduation...">
+    <input type="text" class="form-control" name="gradSemester" placeholder="Estimated semester of graduation..." required>
     </div>
 
     <div class="form-group">
-    <input type="text" class="form-control" name="major" placeholder="Your Major...">
+    <input type="text" class="form-control" name="major" placeholder="Your Major..." required>
     </div>
 
     <div class="form-group">
-    <input type="text" class="form-control" name="minor" placeholder="Your Minor...">
+    <input type="text" class="form-control" name="minor" placeholder="Your Minor..." required>
     </div>
 
     <div class="form-group">
-    <input type="text" class="form-control" name="why" placeholder="Why are you seeking PARC services?">
+    <input type="text" class="form-control" name="why" placeholder="Why are you seeking PARC services?" required>
     </div>
 
     <div class="form-group">
-    <textarea class="form-control" name="courses" placeholder="What courses and subjects do you require tutoring in?"></textarea>
+    <textarea class="form-control" name="courses" placeholder="What courses and subjects do you require tutoring in?" required></textarea>
     </div>
     </fieldset>
     
@@ -94,7 +94,7 @@
          </fieldset>
     <fieldset>
     <div class="form-group">
-    <input type="submit" class="btn btn-primary" name="submit" value="Next Step!">
+        <input type="submit" class="btn btn-primary btn-lg" name="submit" value="Next Step!">
     </div>
     </fieldset>
 </form>
