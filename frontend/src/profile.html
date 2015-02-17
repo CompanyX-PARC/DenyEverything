@@ -1,113 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Student Profile</title>
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <!--link rel="stylesheet" href="css/style.css"-->
-  <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script-->
-</head>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Student Profile</title>
+      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+      <!--link rel="stylesheet" href="css/style.css"-->
+      <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script-->
+    </head>
+    <body>
+        <!--navbar-->
+        <nav class="navbar navbar-inverse">
+            <div class="container">  
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="#">Concordia</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Sign In</a></li>
+                <li><a href="http://csus.edu">PARC Home</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-<body>
-<div class="container">
-    <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-<h1>Please fill out the following form.</h1>
-<form role="form">
-    <fieldset>
-        <legend>Mandatory Information</legend>
-    <div class="form-group">
-        
-    <select name="classLevel" class="form-control" required>
-        <option value="placeholder">Select your grade level...</option>
-        <option value="freshman">Freshman (1st year)</option>    
-        <option value="junior">Junior (2nd year)</option>    
-        <option value="senior">Senior (4th year)</option>
-        <option value="other">Other (5+ years)</option>    
-    </select>
-    </div>
+        <!-- main form -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h1>Step 2</h1>
+                    <h2>Please fill out the following form.</h2>
+                        <form role="form">
+                            <fieldset>
+                                <legend>Mandatory Information</legend>
+                                <div class="form-group">
 
-    <div class="form-group">
-    <input type="text" class="form-control" name="gradSemester" placeholder="Estimated semester of graduation..." required>
-    </div>
+                                    <select name="classLevel" class="form-control" required>
+                                        <option value="">Select your grade level...</option>
+                                        <option value="freshman">Freshman (1st year)</option>    
+                                        <option value="junior">Junior (2nd year)</option>    
+                                        <option value="senior">Senior (4th year)</option>
+                                        <option value="other">Other (5+ years)</option>    
+                                    </select>
+                                </div>
 
-    <div class="form-group">
-    <input type="text" class="form-control" name="major" placeholder="Your Major..." required>
-    </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="gradSemester" placeholder="Estimated semester of graduation..." required>
+                                </div>
 
-    <div class="form-group">
-    <input type="text" class="form-control" name="minor" placeholder="Your Minor..." required>
-    </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="major" placeholder="Your Major..." required>
+                                </div>
 
-    <div class="form-group">
-    <input type="text" class="form-control" name="why" placeholder="Why are you seeking PARC services?" required>
-    </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="minor" placeholder="Your Minor (if applicable)...">
+                                </div>
 
-    <div class="form-group">
-    <textarea class="form-control" name="courses" placeholder="What courses and subjects do you require tutoring in?" required></textarea>
-    </div>
-    </fieldset>
-    
-    <fieldset>
-    <legend>Optional Information</legend>
-        <div class="form-group">Providing the following information is voluntary; it may be used by the department for program effectively assessment and research. It won't be shared with anyone else. </div>
-        
-    <div class="form-group">
-    <input type="text" class="form-control" name="gender" placeholder="Gender...">
-    </div>
-    
-    <div class="form-group">
-    <input type="text" class="form-control" name="ethnicity" placeholder="Ethnicity...">
-    </div>
-    
-    <div class="form-group">
-    <input type="checkbox" name="international"> International Student?
-    </div>
-    
-    <div class="form-group">
-    <input type="text" class="form-control" name="country" placeholder="Country of Origin...">
-    </div>
-    
-    <div class="form-group">
-    <textarea name="homeLanguages" class="form-control" placeholder="List the language(s) you speak at home..."></textarea>
-    </div>
-    
-    <div class="form-group">
-    <input type="checkbox" name="otherPrograms"> Are you receiving services from other programs on campus?
-    </div>
-    
-    <div class="form-group">
-    <textarea name="programs" class="form-control" placeholder="List other campus programs you are receiving services from..."></textarea>
-    </div>
-    
-    <div class="form-group">
-    <input type="checkbox" name="degrees"> Are you enrolled in the DEGREES program?    
-    </div>
-    
-    <div class="form-group">
-    <input type="checkbox" name="smartthinking"> Have you used the SMARTTHINKING online tutoring service?
-    </div>
-    
-    <div class="form-group">
-    <textarea name="howhear" class="form-control" placeholder="How did you first hear about PARC?"></textarea></div>
-         </fieldset>
-    <fieldset>
-    <div class="form-group">
-        <input type="submit" class="btn btn-primary btn-lg" name="submit" value="Next Step!">
-    </div>
-    </fieldset>
-</form>
-</div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="why" placeholder="Why are you seeking PARC services?" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea class="form-control" name="courses" placeholder="What courses and subjects do you require tutoring in?" required></textarea>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                            <legend>Optional Information</legend>
+                                <div class="form-group">Providing the following information is voluntary; it may be used by the department for program effectively assessment and research. It won't be shared with anyone else. </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="gender" placeholder="Gender...">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="ethnicity" placeholder="Ethnicity...">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="international"> International Student?
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="country" placeholder="Country of Origin...">
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea name="homeLanguages" class="form-control" placeholder="List the language(s) you speak at home..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="otherPrograms"> Are you receiving services from other programs on campus?
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea name="programs" class="form-control" placeholder="List other campus programs you are receiving services from..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="degrees"> Are you enrolled in the DEGREES program?    
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" name="smartthinking"> Have you used the SMARTTHINKING online tutoring service?
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea name="howhear" class="form-control" placeholder="How did you first hear about PARC?"></textarea>
+                                </div>
+
+                            </fieldset>
+
+                            <fieldset>   
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary btn-lg" name="submit" value="Next Step!">
+                                </div>
+                            </fieldset>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-<footer>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-                <a href="http://csus.edu/parc">PARC home</a></div> 
-        </div>
-    </div>
-</footer>
-</body>
+        
+        <!-- custom sticky footer -->
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">
+                    Peer and Academic Resource Center -
+                    <a href="http://csus.edu/parc">PARC home</a> - 
+                    <a href="http://csus.edu">CSU Sacramento</a>
+                </p>
+            </div> 
+        </footer>
+    </body>
 </html> 
