@@ -1,73 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Register with PARC - Sac State</title>
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Register with PARC - Sac State</title>
+    
+     <!-- Bootstrap core CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/carousel.css" rel="stylesheet">
   <!--link rel="stylesheet" href="css/style.css"-->
   <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script-->
 </head>
-<body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <section class="container">
-  
-	<!-- Fancy top bar! -->
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+    
+<body> 
+
+<!-- NAVBAR ========================================== -->
+   <nav class="navbar navbar-inverse">
+      <div class="container">  
+          <!-- Jumbotron ===========================
+          <div class="jumbotron" class="pull-left">
+            <h1>Concordia</h1>
+            <p>Brought to you by CompanyX!</p> 
+              <div class="parcTitle" class="pull-right">
+                <img class="img-responsive" style="max-width:300px; max-height:300px;" src="assets/imgs/concordia.jpg" align="right" >
+              </div>
+          </div>  
+        -->
         <div class="navbar-header">
-          <img class="img-responsive" src="assets/imgs/concordia.jpg">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Concordia</a>
+            <a class="navbar-brand" href="#">Concordia</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#about">About</a></li>
+            <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-  
-	<!-- Main frame contents -->
-    <div class="Register">
-	</br></br>
-	</br></br></br></br></br></br></br></br></br></br></br></br>
-	<form class="form-register">
-		<h2 class="form-register-heading">Please enter your email and desired password</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-			<div class="register-help">
-				<p>Please re-enter your password below.</p>
-			</div>
-		<label for="inputPasswordAgain" class="sr-only">Password</label>
-        <input type="password" id="inputPasswordAgain" class="form-control" placeholder="Password" required>
-			
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-	</form>
-	
-	<!--
-		<h1>Account Registration</h1>
-		<form method="post" action="registration.html">
-		<p><input type="text" name="Register" value="" placeholder="Email"></p>
-		<p><input type="password" name="password" value="" placeholder="Password"></p>
-			<div class="register-help">
-				<p>Please re-enter your password below.</p>
-			</div>
-		<p><input type="password" name="password" value="" placeholder="Verify Password"></p>
-		<p class="submit"><input type="submit" name="commit" value="Register"></p>
-		</form>
+      
+<!-- Carousel
+    ================================================== 
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="assets/imgs/concordia.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/imgs/PARC.png" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/imgs/Cody.png" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              
+              <p><a class="btn btn-lg btn-primary" href="http://www.csus.edu/parc/Peer%20Tutors.html" role="button">Meet Tutors</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div> --> 
+    
+    
+<!-- =-=-=-=-=-=-= Resistration Section =-=-=-=-=-=-= -->
+    <div class="register col-sm-6 col-sm-offset-3" >
+        
+    <form class="form-register" data-toggle="validator">
+        <h1>Step 1</h1>
+        <h2 class="form-register-heading">Please enter the following information</h2>
+        <div class="form-group">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="sr-only">Desired Password</label>
+             <input type="password" id="inputDesiredPassword" data-minlength="7" class="form-control" placeholder="Desired password" required>
+            <span class="help-block"Minimum 7 characters!</span>
+        </div>
+        <div class="form-group">
+            <label for="verifyPassword" class="sr-only">Verify Desired Password</label>
+             <input type="password" id="verifyDesiredPassword" data-minlength="7" data-match="#inputDesiredPassword" data-match-error="These passwords don't match..." class="form-control" placeholder="Verify desired password" required>
+           
+        <button class="btn btn-lg btn-primary btn-lg" type="submit">Register</button>
+    </form>
     </div>
-	-->
-  </section>
+<!-- =-=-=-=-=-=-= End Resistration Section =-=-=-=-=-=-= -->
+  
+<!-- Bootstrap core JavaScript
+===============================
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
 </body>
 </html>
