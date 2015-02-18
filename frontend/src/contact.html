@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
+        <title>Welcome to PARC - Sac State</title>
+  
+        <!-- Bootstrap core CSS -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/carousel.css" rel="stylesheet">
+        <script src="assets/js/jquery-1.11.2.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR 
+========================================== 
+-->
+    <nav class="navbar navbar-inverse">
+      <div class="container">  
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="concordia.html">Concordia</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+            <li class="active"><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Content 
+========================================== 
+-->
+    <div class="login col-sm-6 col-sm-offset-3" >
+ <h1>Contact Info</h1>
+        <p>
+Please email any technical issues to:
+<a href="mailto:denyeverything@googlegroups.com?Subject=Technical%20Issue" target="_top">denyeverything@googlegroups.com</a>
+</p>
+        <h1>FAQS</h1>
+            <dl class="faq" id="faqList">
+                <dt id="on">Question One</dt>
+                <dd id="off">first answer to question one</dd>
+                
+                <dt id="on">Question two</dt>
+                <dd id="off">first answer to question two</dd>
+                
+                <dt id="on">Question three</dt>
+                <dd id="off">first answer to question three</dd>
+                
+            </dl>
+        <!--
+        <ul>
+    <li class="q">Question One</li>
+    <li>first answer to question one</li>
+    <li>second answer to question one</li>
+    <li class="q">Question two</li>
+    <li>first answer to question two</li>
+    <li>second answer to question two</li>
+    <li class="q">Question three</li>
+    <li>first answer to question three</li>
+    <li>second answer to question three</li>
+</ul>
+-->
+        <script>
+            $(document).ready(function() {
+                $("#off").hide();
+                $("on").hover(
+                function() {
+                    alert("working");
+                    /*
+                    var toggle = $(this).nextUntil('dt');
+                    toggle.slideToggle();
+                    $('dd').not(toggle).slideUp();
+                    */
+                }
+            });
+        </script>
+    </div>
+ 
+
+<!-- Bootstrap core JavaScript
+===============================
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+</body>
+</html>
