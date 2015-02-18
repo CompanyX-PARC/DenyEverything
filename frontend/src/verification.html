@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Student Profile</title>
+      <link href="assets/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+      <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+      <!--<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script-->
+    </head>
+    
+    <body>
+        <!--navbar-->
+        <nav class="navbar navbar-inverse">
+            <div class="container">  
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="#">Concordia</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="index.html">Sign In</a></li>
+                <li><a href="http://csus.edu">PARC Home</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- main form -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3 main">
+                    <h1>Step 2</h1>
+                        <form role="form" class="form-inline">
+                            <fieldset>
+                                <legend>Email Verification</legend>
+                                <div class="form-group">
+                                <p>We need to make sure you're a human and not an evil robot!<br>
+                                You will receive an email shortly. Enter the six-digit code in the email to verify your email address.</p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="verificationCode" placeholder="Code..." required>
+                                    <input type="submit" class="btn btn-primary" name="submit" value="Verify &raquo;">
+                                </div>
+                            </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- custom sticky footer -->
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">
+                    Peer and Academic Resource Center -
+                    <a href="http://csus.edu/parc">PARC home</a> - 
+                    <a href="http://csus.edu">CSU Sacramento</a>
+                </p>
+            </div> 
+        </footer>
+    </body>
+</html> 
