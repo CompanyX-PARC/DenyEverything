@@ -5,8 +5,7 @@ html {
 
 body {
   /* Margin bottom by footer height */
-   margin-bottom: 40px;
-   background: #011e14 url('../imgs/background.gif') repeat-x top;
+   margin-bottom: 64px;
 }
 
 .main {
@@ -30,4 +29,11 @@ body {
 .footer a:focus {
   color: #fff;
   background-color: transparent;
+}
+
+
+
+.navbar-brand img {
+    display: span;
+    margin-top: -5px;   
 }
