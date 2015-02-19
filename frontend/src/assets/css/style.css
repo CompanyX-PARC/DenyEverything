@@ -33,3 +33,22 @@ body {
     display: span;
     margin-top: -5px;   
 }
+
+.panel .hilight:hover {
+    background-color: #446644;
+    color: #fff;
+}
+
+.panel-body {
+   background-color: #f8f8fa;
+}
+
+#currentStudents .panel-heading {
+    min-height: 48px;
+     cursor: pointer;
+}
+
+#currentStudents .panel-heading h4 {
+    font-size: 1.6em;
+    font-weight: bolder;
+}
