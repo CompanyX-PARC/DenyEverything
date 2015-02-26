@@ -31,6 +31,11 @@ namespace Concordia
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/BootstrapJs").Include(
+                 "~/Scripts/bootstrap.js"));
         }
+
+       
     }
 }
