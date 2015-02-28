@@ -1,0 +1,3 @@
+﻿<smtp from="concordia@jacksontech.net">
+  <network host="smtp.sendgrid.net" password="lol" userName="lol" port="587" enableSsl="true"/>
+</smtp>
