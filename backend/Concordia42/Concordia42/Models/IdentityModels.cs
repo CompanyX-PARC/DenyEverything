@@ -13,6 +13,34 @@ namespace Concordia42.Models
     // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+
+        // STEAMGUARD style verification code
+        public string VerificationCode { get; set; }
+        // store profile in different table
+        public virtual StudentProfile profile { get; set; }
+
+        public class StudentProfile
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Major { get; set; }
+            public string Minor { get; set; }
+            public string GradeLevel { get; set; }
+            public string GradSemester { get; set; }
+            public string WhySeking { get; set; }
+            public string NeedHelpWith { get; set; }
+            public string Gender { get; set; }
+            public string Ethnicity { get; set; }
+            public Boolean International { get; set; }
+            public string CountryOfOrigin { get; set; }
+            public string HomeLanguages { get; set; }
+            public Boolean ReceivingServices { get; set; }
+            public string ReceivingServicesFrom { get; set; }
+            public Boolean DegreesProgram { get; set; }
+            public Boolean SmartThinking { get; set; }
+            public string HearAboutUs { get; set; }
+        }
+
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType

@@ -7,15 +7,46 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Concordia42.Models;
+using SendGrid;
+using System.Net;
+using System.Diagnostics;
+using System.Configuration;
 
 namespace Concordia42
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        // http://www.asp.net/web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration,-email-confirmation-and-password-reset
+        public async Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            await configSendGridasync(message);
+        }
+
+        /* send grid email service */
+        private async Task configSendGridasync(IdentityMessage message)
+        {
+            var myMessage = new SendGridMessage();
+            myMessage.AddTo(message.Destination);
+            myMessage.From = new System.Net.Mail.MailAddress(ConfigurationManager.AppSettings["sendGridFrom"], "Project Concordia");
+            myMessage.Subject = message.Subject;
+            myMessage.Text = message.Body;
+            myMessage.Html = message.Body;
+
+            var credentials = new NetworkCredential(ConfigurationManager.AppSettings["sendGridUser"], ConfigurationManager.AppSettings["sendGridPassword"]);
+
+            var transportWeb = new Web(credentials);
+
+            if (transportWeb != null)
+            {
+                await transportWeb.DeliverAsync(myMessage);
+            }
+            else
+            {
+                // TODO disable?
+                Trace.TraceError("Failed to create web transport.");
+                await Task.FromResult(0);
+            }
+
         }
     }
 
@@ -49,11 +80,11 @@ namespace Concordia42
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
+                RequiredLength = 8,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false,
             };
 
             // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
