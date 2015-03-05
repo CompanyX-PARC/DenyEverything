@@ -31,7 +31,7 @@
                                         <!--
                                         <asp:Label runat="server" AssociatedControlID="Email">Email</asp:Label>
                                         -->
-                                        <asp:TextBox placeholder="Enter Your Email"  runat="server" ID="Email" />
+                                        <asp:TextBox placeholder="Enter Your Email"  runat="server" ID="Email" ToolTip="WOOOOOOO" Width="270px" />
                                         <asp:RequiredFieldValidator runat="server" ControlToValidate="Email" CssClass="field-validation-error" ErrorMessage="The user Email field is required." />
                                     </li>
                                     <li>
