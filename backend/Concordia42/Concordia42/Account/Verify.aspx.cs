@@ -33,8 +33,16 @@ namespace Concordia42.Account
                         user.EmailConfirmed = true;
                         user.VerificationCode = null;
                         manager.Update(user); // should I be using async?
-                        ErrorMessage.Text = "YAY :D :D :D :D :D :D: D: D:";
+                        Response.Redirect("/Account/Profile?m=verifySuccess");
                     }
+                    else
+                    {
+                        ErrorMessage.Text = "That's not the correct verification code! Check the email and try again.";
+                    }
+                }
+                else
+                {
+                    Response.Redirect("/Accounts/Manage?m=alreadyVerified");
                 }
             }
         }

@@ -161,6 +161,7 @@
     <Content Include="Account\ManageLogins.aspx" />
     <Content Include="Account\ManagePassword.aspx" />
     <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Profile.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
@@ -289,6 +290,13 @@
     <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Account\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -374,6 +382,10 @@
     <Compile Include="Migrations\201503051855396_Initial1.Designer.cs">
       <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503052158446_roleCreate.cs" />
+    <Compile Include="Migrations\201503052158446_roleCreate.Designer.cs">
+      <DependentUpon>201503052158446_roleCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -409,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503051855396_Initial1.resx">
       <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503052158446_roleCreate.resx">
+      <DependentUpon>201503052158446_roleCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
