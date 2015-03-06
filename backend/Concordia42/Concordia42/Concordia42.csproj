@@ -42,8 +42,7 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Microsoft.Owin">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
     <Reference Include="SendGrid.SmtpApi">
@@ -293,7 +292,6 @@
     </Compile>
     <Compile Include="Account\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
@@ -383,10 +381,6 @@
     <Compile Include="Migrations\201503051855396_Initial1.Designer.cs">
       <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503052158446_roleCreate.cs" />
-    <Compile Include="Migrations\201503052158446_roleCreate.Designer.cs">
-      <DependentUpon>201503052158446_roleCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -422,9 +416,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503051855396_Initial1.resx">
       <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503052158446_roleCreate.resx">
-      <DependentUpon>201503052158446_roleCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
