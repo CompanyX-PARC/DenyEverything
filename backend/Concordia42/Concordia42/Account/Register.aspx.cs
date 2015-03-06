@@ -46,17 +46,9 @@ namespace Concordia42.Account
                     "<p><em>Peer and Academic Resource Center<br/>CSU Sacramento</em></p>" +
                     "<p><br/>P.S. If you didn't register for a PARC account, don't worry; you don't have to do anything. You can safely ignore this email.</p>\r\n");
 
-                if (user.EmailConfirmed)
-                {
+                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+                IdentityHelper.RedirectToReturnUrl("/Account/Verify", Response);
 
-                    signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-
-                }
-                else
-                {
-                    ErrorMessage.Text = "An email has been sent to the address you just provided. Please view the email and confirm your account!";
-                }
             }
             else 
             {
