@@ -3,38 +3,45 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1>Concordia</h1>
+        <p class="lead">Concordia is a tutor scheduling web application for PARC.</p>
+        <p><a href="http://www.csus.edu/parc/Program%20Description.html" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
 
     <div class="row">
         <div class="col-md-4">
             <h2>Getting started</h2>
             <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
+                If this is your first time to PARC you must register first. Please click on the Register link in the upper right-hand corner.
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <a class="btn btn-primary" id="registerLink" runat="server" href="~/Account/Register">Register &raquo;</a>
+                    </AnonymousTemplate>
+                </asp:LoginView>   
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
+            <h2>Once Registered, Login!</h2>
             <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+                Once you have completed your registration you will be permitted to login. Please click on the Log In link in the upper right-hand corner.
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <a class="btn btn-primary" id="loginLink" runat="server" href="~/Account/Login">Log In &raquo;</a>
+                    </AnonymousTemplate>
+                </asp:LoginView>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>Once Logged In, Schedule a Tutor Session</h2>
+            <p>
+                Once you have logged in you will be able to schedule a tutoring session. As a reminder to you and a courtesy to the tutors, please cancel your tutoring sessions well in advance. Good luck!
+            </p>
+            <p>
+                <!-- a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a -->
             </p>
         </div>
     </div>
