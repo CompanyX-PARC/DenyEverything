@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Concordia42.Models;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Concordia42.Models
 {
@@ -66,6 +68,10 @@ namespace Concordia42.Models
         {
             return new ApplicationDbContext();
         }
+
+        // I'm a table named Locations of type Location...
+        public DbSet<Location> Locations { get; set; }
+
     }
 }
 
