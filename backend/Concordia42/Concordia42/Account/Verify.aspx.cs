@@ -23,6 +23,7 @@ namespace Concordia42.Account
         protected void verifyButton_Click(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
             var user = manager.FindById(User.Identity.GetUserId());
             Response.Write(user.VerificationCode);
             if (user != null) {
@@ -32,6 +33,7 @@ namespace Concordia42.Account
                     {
                         user.EmailConfirmed = true;
                         user.VerificationCode = null;
+                        manager.AddToRole(user.Id, "verified");
                         manager.Update(user); // should I be using async?
                         Response.Redirect("/Account/Profile?m=verifySuccess");
                     }
