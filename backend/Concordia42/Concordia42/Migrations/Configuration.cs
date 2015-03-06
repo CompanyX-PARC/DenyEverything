@@ -1,5 +1,6 @@
 namespace Concordia42.Migrations
 {
+    using Concordia42.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
@@ -38,6 +39,13 @@ namespace Concordia42.Migrations
             roleManager.Create(new IdentityRole("leader"));
             roleManager.Create(new IdentityRole("student"));
             roleManager.Create(new IdentityRole("verified"));
+
+            context.Locations.AddOrUpdate(
+                l => l.locName,
+                new Location { locName = "Home" },
+                new Location { locName = "PARC HQ"},
+                new Location { locName = "Library"}
+            );
             
             
 

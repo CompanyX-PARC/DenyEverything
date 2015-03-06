@@ -155,6 +155,7 @@
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Location.aspx" />
     <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
@@ -247,6 +248,13 @@
     </Compile>
     <Compile Include="Account\Forgot.aspx.designer.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Location.aspx.cs">
+      <DependentUpon>Location.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Location.aspx.designer.cs">
+      <DependentUpon>Location.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Lockout.aspx.cs">
       <DependentUpon>Lockout.aspx</DependentUpon>
@@ -381,8 +389,17 @@
     <Compile Include="Migrations\201503051855396_Initial1.Designer.cs">
       <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503062310166_forLocation.cs" />
+    <Compile Include="Migrations\201503062310166_forLocation.Designer.cs">
+      <DependentUpon>201503062310166_forLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503062321482_newLocTable.cs" />
+    <Compile Include="Migrations\201503062321482_newLocTable.Designer.cs">
+      <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -416,6 +433,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503051855396_Initial1.resx">
       <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503062310166_forLocation.resx">
+      <DependentUpon>201503062310166_forLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503062321482_newLocTable.resx">
+      <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
