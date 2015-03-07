@@ -25,11 +25,10 @@ namespace Concordia42.Account
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
             var user = manager.FindById(User.Identity.GetUserId());
-            Response.Write(user.VerificationCode);
             if (user != null) {
                 if (!String.IsNullOrEmpty(user.VerificationCode)) { 
                     // success!
-                    if (user.VerificationCode.Equals(verifyCode.Text))
+                    if (user.VerificationCode.Equals(verifyCode.Text.Trim()))
                     {
                         user.EmailConfirmed = true;
                         user.VerificationCode = null;
@@ -44,7 +43,7 @@ namespace Concordia42.Account
                 }
                 else
                 {
-                    Response.Redirect("/Accounts/Manage?m=alreadyVerified");
+                    Response.Redirect("/Account/Manage?m=alreadyVerified");
                 }
             }
         }
