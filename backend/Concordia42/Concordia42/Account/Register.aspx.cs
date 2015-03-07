@@ -39,15 +39,15 @@ namespace Concordia42.Account
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges(); // async?
 
-                manager.SendEmail(user.Id, "Please confirm your PARC account", "<h1>Welcome to PARC!</h1><p>You need to verify your account.</p>\r\n" +
-                    "<br />You should be seeing a page asking you to enter a verification code. \r\n\r\n<p>Enter this code: <strong>" + password + "</strong>.</p>\r\n" +
+                manager.SendEmail(user.Id, "Please confirm your PARC account", "<h1>Welcome to PARC!</h1><p>You need to verify your PARC account.</p>" +
+                    "<p>You should be seeing a page asking you to enter a verification code.</p><p>Enter this code: <strong>" + password + "</strong>.</p>" +
                     "<p>If you don't see the verification page, or you closed the browser window, that's okay! " +
-                    "<br />You can instead verify your account by <a href=\"" + callbackUrl + "\">clicking here</a>.</p>\r\n" +
+                    "<br />You can instead verify your account by <a href=\"" + callbackUrl + "\">clicking here</a>.</p>" +
                     "<p><em>Peer and Academic Resource Center<br/>CSU Sacramento</em></p>" +
-                    "<p><br/>P.S. If you didn't register for a PARC account, don't worry; you don't have to do anything. You can safely ignore this email.</p>\r\n");
+                    "<p><br />P.S. If you didn't register for a PARC account, don't worry; you don't have to do anything. You can safely ignore this email.</p>\r\n\r\n");
 
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-                IdentityHelper.RedirectToReturnUrl("/Account/Verify", Response);
+                IdentityHelper.RedirectToReturnUrl("~/Account/Verify", Response);
 
             }
             else 
