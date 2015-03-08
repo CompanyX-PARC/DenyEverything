@@ -1,12 +1,13 @@
 ﻿<%@ Page Title="Final Step" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Profile.aspx.cs" Inherits="Concordia42.Account.Profile" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %></h2>
+    
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
 
-    <div class="col-sm-6 col-sm-offset-3 form-horizontal main">
+    <div class="col-sm-6 col-sm-offset-3 main">
+        <h2><%: Title %></h2>
         <h4>Student Profile</h4>
         <p>
             Please fill out the following information.
@@ -43,7 +44,7 @@
         </div>
 
         <div class="form-group">
-            <asp:TextBox runat="server" ID="Why" CssClass="form-control" TextMode="SingleLine" placeholder="Why are you seeking PARC services?" ToolTip="Your reason for visiting PARC, ie: Tutoring" />
+            <asp:TextBox runat="server" ID="Why" CssClass="form-control" TextMode="SingleLine" placeholder="Why are you seeking PARC services?" ToolTip="Your reason for visiting PARC, e.g.: Tutoring" />
             <asp:RequiredFieldValidator runat="server" ControlToValidate="Why"
                 CssClass="text-danger" ErrorMessage="Please tell us why you need our services. This will help us help you!" />
         </div>
@@ -70,7 +71,7 @@
         </div>
 
         <div class="form-group">
-            <asp:CheckBox runat="server" CssClass="form-control" ID="InternationalStudent" Text="  Are you an International Student?" />
+            <asp:CheckBox runat="server" ID="InternationalStudent" Text="  Are you an International Student?" />
         </div>
         
         <div class="form-group">
@@ -82,7 +83,7 @@
         </div>
 
         <div class="form-group">
-            <asp:CheckBox runat="server" CssClass="form-control" ID="OtherProgramsOnCampus" Text="  Are you receiving services from other programs on campus?" />
+            <asp:CheckBox runat="server" Text="  Are you receiving services from other programs on campus?" />
         </div>
 
         <div class="form-group">
@@ -90,11 +91,11 @@
         </div>
 
         <div class="form-group">
-            <asp:CheckBox runat="server" CssClass="form-control" ID="DegreesProgram" Text=" Are you enrolled in the DEGREES program?" />
+            <asp:CheckBox runat="server" ID="DegreesProgram" Text="  Are you enrolled in the DEGREES program?" />
         </div>
 
         <div class="form-group">
-            <asp:CheckBox runat="server" CssClass="form-control" ID="Smartthinking" Text=" Have you used the SMARTTHINKING online tutoring service?" />
+            <asp:CheckBox runat="server" ID="Smartthinking" Text="  Have you used the SMARTTHINKING online tutoring service?" />
         </div>
 
         <div class="form-group">
