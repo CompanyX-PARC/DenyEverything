@@ -50,7 +50,7 @@
         </div>
 
         <div class="form-group">
-            <asp:TextBox runat="server" ID="WhatCourses" CssClass="form-control" placeholder="What courses do you require assistance with?" TextMode="MultiLine" ToolTip="ie: Calculus, History, etc" />
+            <asp:TextBox runat="server" ID="WhatCourses" CssClass="form-control" placeholder="What courses do you require assistance with?" TextMode="MultiLine" ToolTip="ie: Calculus, History, etc" Rows="3" />
             <asp:RequiredFieldValidator runat="server" ControlToValidate="WhatCourses"
                 CssClass="text-danger" ErrorMessage="Please tell us what you need help with." />
         </div>
@@ -71,7 +71,8 @@
         </div>
 
         <div class="form-group">
-            <asp:CheckBox runat="server" ID="InternationalStudent" Text="  Are you an International Student?" />
+            <asp:CheckBox runat="server" ID="InternationalStudent" />
+            <asp:Label AssociatedControlID="InternationalStudent" runat="server">Are you an International Student?</asp:Label>
         </div>
         
         <div class="form-group">
@@ -79,32 +80,35 @@
         </div>
 
         <div class="form-group">
-            <asp:TextBox runat="server" ID="LanguagesSpoken" CssClass="form-control" placeholder="Languages Spoken" TextMode="MultiLine" />
+            <asp:TextBox runat="server" ID="LanguagesSpoken" CssClass="form-control" placeholder="Languages Spoken" TextMode="MultiLine" Rows="3" />
         </div>
 
         <div class="form-group">
-            <asp:CheckBox runat="server" Text="  Are you receiving services from other programs on campus?" />
+            <asp:CheckBox runat="server" ID="OtherPrograms" />
+            <asp:Label AssociatedControlID="OtherPrograms" runat="server">Are you receiving services from other programs on campus?</asp:Label>
         </div>
 
         <div class="form-group">
-            <asp:TextBox runat="server" ID="ListOtherPrograms" CssClass="form-control" placeholder="Please list the other campus programs you are receiving services from..." Textmode="MultiLine" />
+            <asp:TextBox runat="server" ID="ListOtherPrograms" CssClass="form-control" placeholder="Please list the other campus programs you are receiving services from..." Textmode="MultiLine" Rows="3" />
         </div>
 
         <div class="form-group">
-            <asp:CheckBox runat="server" ID="DegreesProgram" Text="  Are you enrolled in the DEGREES program?" />
+            <asp:CheckBox runat="server" ID="DegreesProgram" />
+            <asp:Label AssociatedControlID="DegreesProgram" runat="server">Are you enrolled in the DEGREES program?</asp:Label>
         </div>
 
         <div class="form-group">
-            <asp:CheckBox runat="server" ID="Smartthinking" Text="  Have you used the SMARTTHINKING online tutoring service?" />
+            <asp:CheckBox runat="server" ID="Smartthinking" />
+            <asp:Label AssociatedControlID="Smartthinking" runat="server">Have you used the SMARTTHINKING online tutoring service?</asp:Label>
         </div>
 
         <div class="form-group">
-            <asp:TextBox runat="server" CssClass="form-control" ID="How" placeholder="How did you hear about PARC?" TextMode="MultiLine" />
+            <asp:TextBox runat="server" CssClass="form-control" ID="How" placeholder="How did you hear about PARC?" TextMode="MultiLine" Rows="3" />
         </div>
 
 
         <div class="form-group">
-            <asp:Button runat="server" Text="Finish" CssClass="btn btn-primary" />
+            <asp:Button runat="server" Text="Finish &raquo;" CssClass="btn btn-primary" />
         </div>
     </div>
 
