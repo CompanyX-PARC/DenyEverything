@@ -59,7 +59,7 @@ namespace Concordia42.Account
                     /* okay, update profile and redirect */
                     user.profile = userProfile; /* in case we just made a new one */
                     manager.Update(user);
-                    Response.Redirect("~/Account/Manage?m=profileCreated");
+                    Response.Redirect("~/Account/Manage?m=ProfileCreated");
                 }
             }
         }
