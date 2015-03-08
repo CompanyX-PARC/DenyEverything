@@ -108,7 +108,7 @@
 
 
         <div class="form-group">
-            <asp:Button runat="server" Text="Finish &raquo;" CssClass="btn btn-primary" />
+            <asp:Button runat="server" Text="Finish &raquo;" CssClass="btn btn-primary" ID="FinishBtn" OnClick="FinishBtn_Click" />
         </div>
     </div>
 
