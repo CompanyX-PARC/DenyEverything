@@ -19,6 +19,11 @@
                                         <asp:Label runat="server" AssociatedControlID="verifyCode" CssClass="col-md-2 control-label">Code from Email</asp:Label>
                                         <div class="col-md-10">
                                             <asp:TextBox ID="verifyCode" runat="server" CssClass="form-control" Width="160px"></asp:TextBox>
+                                              <asp:RequiredFieldValidator runat="server" ControlToValidate="verifyCode"
+                                                 CssClass="text-danger" Display="Dynamic" ErrorMessage="You need to enter a verification code." ForeColor="Red" />
+                                              <asp:RegularExpressionValidator runat="server" ControlToValidate="verifyCode" CssClass="text-danger" 
+                                                Display="Dynamic" ErrorMessage="The verification code is invalid. It should be a six-digit number."
+                                                   ForeColor="Red" ValidationExpression="^[0-9]{6}$" />
                                          </div>  
                                     </div>
                                     <hr />

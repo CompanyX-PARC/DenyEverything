@@ -50,7 +50,7 @@
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
                         CssClass="text-danger" Display="Dynamic" ErrorMessage="The password field is required." ForeColor="Red" />
                     <asp:RegularExpressionValidator runat="server" ControlToValidate="Password" CssClass="text-danger" 
-                       Display="Dynamic" ErrorMessage="The password must be at least 8 characters." ForeColor="Red" ValidationExpression="" />
+                       Display="Dynamic" ErrorMessage="The password must be at least 8 characters." ForeColor="Red" ValidationExpression=".{8}.*" />
                 </div>
             </div>
             <div class="form-group">
