@@ -32,7 +32,7 @@
             <div class="col-md-10">
             <asp:TextBox runat="server" ID="EstimatedGradDate" CssClass="form-control" TextMode="SingleLine" placeholder="Estimated Graduation Date..." ToolTip="For example, Fall 2015" />
             <asp:RequiredFieldValidator runat="server" ControlToValidate="EstimatedGradDate"
-                CssClass="text-danger" Display="Dynamic" ErrorMessage="Your expected graduation date is required. Estimate if you are uncertain." />
+                CssClass="text-danger" Display="Dynamic" ErrorMessage="Your expected graduation date is required. Estimate if you are uncertain." SetFocusOnError="true" />
                 </div>
         </div>
 
@@ -41,7 +41,7 @@
             <div class="col-md-10">
             <asp:TextBox runat="server" ID="Major" CssClass="form-control" TextMode="SingleLine" placeholder="Your Major..." />
             <asp:RequiredFieldValidator runat="server" ControlToValidate="Major"
-                CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter your major." />
+                CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter your major." SetFocusOnError="true" />
             </div>
         </div>
 
@@ -57,7 +57,7 @@
             <div class="col-md-10">
             <asp:TextBox runat="server" ID="Why" CssClass="form-control" TextMode="SingleLine" placeholder="Why are you seeking PARC services?" ToolTip="Your reason for visiting PARC, e.g.: Tutoring" />
             <asp:RequiredFieldValidator runat="server" ControlToValidate="Why"
-                CssClass="text-danger" Display="Dynamic" ErrorMessage="Please tell us why you need our services. This will help us help you!" />
+                CssClass="text-danger" Display="Dynamic" ErrorMessage="Please tell us why you need our services. This will help us help you!" SetFocusOnError="true" />
                 </div>
         </div>
 
@@ -66,7 +66,7 @@
             <div class="col-md-10">
             <asp:TextBox runat="server" ID="WhatCourses" CssClass="form-control" placeholder="Enter courses or subjects..." TextMode="MultiLine" ToolTip="ie: Calculus, History, etc" Rows="3" />
             <asp:RequiredFieldValidator runat="server" ControlToValidate="WhatCourses"
-                CssClass="text-danger" Display="Dynamic" ErrorMessage="Please tell us what you need help with." />
+                CssClass="text-danger" Display="Dynamic" ErrorMessage="Please tell us what you need help with." SetFocusOnError="true" />
              </div>
         </div>
         </fieldset>
