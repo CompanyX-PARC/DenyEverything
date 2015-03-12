@@ -29,6 +29,9 @@
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
+                            <p>
+                                <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
+                             </p>
                         </div>
                     </div>
                     <div class="form-group">
@@ -48,11 +51,7 @@
                 <p>
                     Don't have an account? You'll need to <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">register as a new user</asp:HyperLink>
                 </p>
-                <p>
-                    <%-- Enable this once you have account confirmation enabled for password reset functionality
-                    <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
-                    --%>
-                </p>
+
             </section>
         </div>
     </div>

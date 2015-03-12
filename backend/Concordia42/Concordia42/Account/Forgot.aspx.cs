@@ -29,9 +29,9 @@ namespace Concordia42.Account
                 }
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                 // Send email with the code and the redirect to reset password page
-                //string code = manager.GeneratePasswordResetToken(user.Id);
-                //string callbackUrl = IdentityHelper.GetResetPasswordRedirectUrl(code, Request);
-                //manager.SendEmail(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>.");
+                string code = manager.GeneratePasswordResetToken(user.Id);
+                string callbackUrl = IdentityHelper.GetResetPasswordRedirectUrl(code, Request);
+                manager.SendEmail(user.Id, "Reset PARC Password", "To reset your PARC password, <a href=\"" + callbackUrl + "\">please click the following link</a>.");
                 loginForm.Visible = false;
                 DisplayEmail.Visible = true;
             }
