@@ -24,7 +24,7 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="select"],
-select {
+select, textarea {
     max-width: 280px;
 }
 
