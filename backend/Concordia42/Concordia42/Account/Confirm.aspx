@@ -11,7 +11,8 @@
         </asp:PlaceHolder>
         <asp:PlaceHolder runat="server" ID="errorPanel" ViewStateMode="Disabled" Visible="false">
             <p class="text-danger">
-                An error has occurred.
+                An error has occurred. You might've already verified your account!<br />
+                Try to <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Account/Login">log in here</asp:HyperLink>.
             </p>
         </asp:PlaceHolder>
     </div>
