@@ -1,0 +1,5 @@
+﻿<appSettings>
+	<add key="sendGridUser" value="bob" />
+	<add key="sendGridPassword" value="bobisawesome" />
+	<add key="sendGridFrom" value="concordia@jacksontech.net" />
+</appSettings>
