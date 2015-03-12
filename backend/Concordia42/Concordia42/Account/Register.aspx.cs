@@ -30,7 +30,7 @@ namespace Concordia42.Account
 
                 // steamguard style code too
                 Random random = new Random();
-                string password = random.Next(10000, 99999) + "";
+                string password = random.Next(100000, 999999) + "";
 
                 user.VerificationCode = password;
                 user.FirstName = FirstName.Text.Trim();
