@@ -121,13 +121,13 @@ namespace Concordia42.Account {
         protected global::System.Web.UI.WebControls.TextBox LanguagesSpoken;
         
         /// <summary>
-        /// OtherProgramsOnCampus control.
+        /// OtherPrograms control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox OtherProgramsOnCampus;
+        protected global::System.Web.UI.WebControls.CheckBox OtherPrograms;
         
         /// <summary>
         /// ListOtherPrograms control.
@@ -164,5 +164,14 @@ namespace Concordia42.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox How;
+        
+        /// <summary>
+        /// FinishBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FinishBtn;
     }
 }
