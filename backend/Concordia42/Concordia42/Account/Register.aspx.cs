@@ -33,6 +33,8 @@ namespace Concordia42.Account
                 string password = random.Next(10000, 99999) + "";
 
                 user.VerificationCode = password;
+                user.FirstName = FirstName.Text.Trim();
+                user.LastName = LastName.Text.Trim();
                 manager.Update(user);
 
                 manager.SendEmail(user.Id, "Please confirm your PARC account", "<h1>Welcome to PARC!</h1><p>You need to verify your PARC account.</p>" +

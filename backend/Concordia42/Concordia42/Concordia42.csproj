@@ -406,6 +406,10 @@
     <Compile Include="Migrations\201503062321482_newLocTable.Designer.cs">
       <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503121802088_addedName.cs" />
+    <Compile Include="Migrations\201503121802088_addedName.Designer.cs">
+      <DependentUpon>201503121802088_addedName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
@@ -448,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503062321482_newLocTable.resx">
       <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503121802088_addedName.resx">
+      <DependentUpon>201503121802088_addedName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
