@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <asp:PlaceHolder id="loginForm" runat="server">
                 <div class="form-horizontal">
-                    <h4>Forgot your password?</h4>
+                    <h4>Forgot your PARC password?</h4>
                     <hr />
                     <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
                         <p class="text-danger">
@@ -24,14 +24,14 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="Forgot" Text="Email Link" CssClass="btn btn-default" />
+                            <asp:Button runat="server" OnClick="Forgot" Text="Email Password Reset Link" CssClass="btn btn-default" />
                         </div>
                     </div>
                 </div>
             </asp:PlaceHolder>
             <asp:PlaceHolder runat="server" ID="DisplayEmail" Visible="false">
                 <p class="text-info">
-                    Please check your email to reset your password.
+                    Done! Please check your email to reset your password.
                 </p>
             </asp:PlaceHolder>
         </div>
