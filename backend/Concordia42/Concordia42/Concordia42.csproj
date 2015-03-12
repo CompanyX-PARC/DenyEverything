@@ -176,6 +176,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrontDesk\CardSwipe.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -387,6 +388,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FrontDesk\CardSwipe.aspx.cs">
+      <DependentUpon>CardSwipe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontDesk\CardSwipe.aspx.designer.cs">
+      <DependentUpon>CardSwipe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -405,6 +413,10 @@
     <Compile Include="Migrations\201503062321482_newLocTable.cs" />
     <Compile Include="Migrations\201503062321482_newLocTable.Designer.cs">
       <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503121704467_studentIdField.cs" />
+    <Compile Include="Migrations\201503121704467_studentIdField.Designer.cs">
+      <DependentUpon>201503121704467_studentIdField.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -448,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503062321482_newLocTable.resx">
       <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503121704467_studentIdField.resx">
+      <DependentUpon>201503121704467_studentIdField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
