@@ -60,7 +60,7 @@ namespace Concordia42.Migrations
             name = "admin";
             var admin = new ApplicationUser
             {
-                UserName = name,
+                UserName = name + "@concordia.com",
                 PasswordHash = hasher.HashPassword(name),
                 Email = "admin@concordia.com",
                 EmailConfirmed = true,
@@ -74,7 +74,7 @@ namespace Concordia42.Migrations
             name = "assistant";
             var assistant = new ApplicationUser
             {
-                UserName = name,
+                UserName = name + "@concordia.com",
                 PasswordHash = hasher.HashPassword(name),
                 Email = "assistant@concordia.com",
                 EmailConfirmed = true,
@@ -88,7 +88,7 @@ namespace Concordia42.Migrations
             name = "leader";
             var leader = new ApplicationUser
             {
-                UserName = name,
+                UserName = name + "@concordia.com",
                 PasswordHash = hasher.HashPassword(name),
                 Email = "leader@concordia.com",
                 EmailConfirmed = true,
@@ -102,7 +102,7 @@ namespace Concordia42.Migrations
             name = "student";
             var student = new ApplicationUser
             {
-                UserName = name,
+                UserName = name + "@concordia.com",
                 PasswordHash = hasher.HashPassword(name),
                 Email = "student@concordia.com",
                 EmailConfirmed = true,
