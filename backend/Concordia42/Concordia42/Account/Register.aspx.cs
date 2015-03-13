@@ -28,19 +28,15 @@ namespace Concordia42.Account
                 string code = manager.GenerateEmailConfirmationToken(user.Id);
                 string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
 
-                // steamguard style code too?
+                // steamguard style code too
                 Random random = new Random();
                 string password = random.Next(10000, 99999) + "";
-                // does this work!?
-                // seems like a perf hit... -Cody
-                ApplicationDbContext db = new ApplicationDbContext();
 
                 user.VerificationCode = password;
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges(); // async?
+                manager.Update(user);
 
                 manager.SendEmail(user.Id, "Please confirm your PARC account", "<h1>Welcome to PARC!</h1><p>You need to verify your PARC account.</p>" +
-                    "<p>You should be seeing a page asking you to enter a verification code.</p><p>Enter this code: <strong>" + password + "</strong>.</p>" +
+                    "<p>You should be seeing a page asking you to enter a verification code.</p><p>Enter this code: <strong>" + password + "</strong></p>" +
                     "<p>If you don't see the verification page, or you closed the browser window, that's okay! " +
                     "<br />You can instead verify your account by <a href=\"" + callbackUrl + "\">clicking here</a>.</p>" +
                     "<p><em>Peer and Academic Resource Center<br/>CSU Sacramento</em></p>" +
