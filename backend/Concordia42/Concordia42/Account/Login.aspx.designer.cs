@@ -49,6 +49,15 @@ namespace Concordia42.Account {
         protected global::System.Web.UI.WebControls.TextBox Password;
         
         /// <summary>
+        /// ForgotPasswordHyperLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink ForgotPasswordHyperLink;
+        
+        /// <summary>
         /// RememberMe control.
         /// </summary>
         /// <remarks>
@@ -65,14 +74,5 @@ namespace Concordia42.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink RegisterHyperLink;
-        
-        /// <summary>
-        /// OpenAuthLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Concordia42.Account.OpenAuthProviders OpenAuthLogin;
     }
 }

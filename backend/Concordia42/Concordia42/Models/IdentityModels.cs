@@ -7,22 +7,27 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Concordia42.Models;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Concordia42.Models
 {
     // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-
+        //USER 
         // STEAMGUARD style verification code
         public string VerificationCode { get; set; }
         // store profile in different table
         public virtual StudentProfile profile { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
+        //PROFILE
         public class StudentProfile
         {
             public int Id { get; set; }
-            public string Name { get; set; }
+            //public string Name { get; set; }
             public string Major { get; set; }
             public string Minor { get; set; }
             public string GradeLevel { get; set; }
@@ -66,6 +71,10 @@ namespace Concordia42.Models
         {
             return new ApplicationDbContext();
         }
+
+        // I'm a table named Locations of type Location...
+        public DbSet<Location> Locations { get; set; }
+
     }
 }
 

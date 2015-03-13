@@ -18,6 +18,12 @@ namespace Concordia42.Account
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // if the user is logged in, this will NOT be blank
+            if (!String.IsNullOrEmpty(User.Identity.Name))
+            {
+                Response.Redirect("~/Account/Manage"); // should use ~ in front of ALL the things
+            }
+
             string code = IdentityHelper.GetCodeFromRequest(Request);
             string userId = IdentityHelper.GetUserIdFromRequest(Request);
             if (code != null && userId != null)
