@@ -16,33 +16,31 @@ namespace Concordia42.FrontDesk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextBox1.Focus();
+            IdBox.Focus();
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void IdButton_Click(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             // var user = manager.FindById(User.Identity.GetUserId());
             ApplicationDbContext db = new ApplicationDbContext();
 
-            var user = db.Users.FirstOrDefault(u => u.StudentId.Equals(TextBox1.Text.Trim()));
-
+            var user = db.Users.FirstOrDefault(u => u.StudentId.Equals(IdBox.Text.Trim()));
 
             if (user == null)
             {
-                Label1.Text = "Couldn't find user :(";
+                ErrorMessage.Text = "Couldn't find user!";
+                ErrorDiv.Visible = true;
+                SuccessDiv.Visible = false;
             }
             else
             {
-                Label1.Text = "Found user: " + user.Email;
+                SuccessMessage.Text = "Found user: " + user.Email;
+                SuccessDiv.Visible = true;
+                ErrorDiv.Visible = false;
             }
             //Label1.Text = "Welcome, " + TextBox1.Text;
-            TextBox1.Text = "";
+            IdBox.Text = "";
         }
     }
 }
