@@ -40,20 +40,20 @@ namespace Concordia42.Migrations
 
             string name;
           
-            var adminRole = new IdentityRole { Name = "admin", Id = Guid.NewGuid().ToString() };
-            context.Roles.Add(adminRole);
+            var adminRole = new IdentityRole { Name = "admin" };
+            context.Roles.AddOrUpdate(l => l.Name, adminRole);
 
-            var assistantRole = new IdentityRole { Name = "assistant", Id = Guid.NewGuid().ToString() };
-            context.Roles.Add(assistantRole);
+            var assistantRole = new IdentityRole { Name = "assistant" };
+            context.Roles.AddOrUpdate(l => l.Name, assistantRole);
 
-            var leaderRole = new IdentityRole { Name = "leader", Id = Guid.NewGuid().ToString() };
-            context.Roles.Add(leaderRole);
+            var leaderRole = new IdentityRole { Name = "leader" };
+            context.Roles.AddOrUpdate(l => l.Name, leaderRole);
 
-            var studentRole = new IdentityRole { Name = "student", Id = Guid.NewGuid().ToString() };
-            context.Roles.Add(studentRole);
+            var studentRole = new IdentityRole { Name = "student" };
+            context.Roles.AddOrUpdate(l => l.Name, studentRole);
 
-            var verifiedRole = new IdentityRole { Name = "verified", Id = Guid.NewGuid().ToString() };
-            context.Roles.Add(verifiedRole);
+            var verifiedRole = new IdentityRole { Name = "verified" };
+            context.Roles.AddOrUpdate(l => l.Name, verifiedRole);
 
             var hasher = new PasswordHasher();
 
@@ -69,7 +69,7 @@ namespace Concordia42.Migrations
 
             admin.Roles.Add(new IdentityUserRole { RoleId = adminRole.Id, UserId = admin.Id });
 
-            context.Users.Add(admin);
+            context.Users.AddOrUpdate(l => l.UserName, admin);
 
             name = "assistant";
             var assistant = new ApplicationUser
@@ -83,7 +83,7 @@ namespace Concordia42.Migrations
 
             assistant.Roles.Add(new IdentityUserRole { RoleId = assistantRole.Id, UserId = assistant.Id });
 
-            context.Users.Add(assistant);
+            context.Users.AddOrUpdate(l => l.UserName, assistant);
 
             name = "leader";
             var leader = new ApplicationUser
@@ -97,7 +97,7 @@ namespace Concordia42.Migrations
 
             leader.Roles.Add(new IdentityUserRole { RoleId = leaderRole.Id, UserId = leader.Id });
 
-            context.Users.Add(leader);
+            context.Users.AddOrUpdate(l => l.UserName, leader);
 
             name = "student";
             var student = new ApplicationUser
@@ -111,7 +111,7 @@ namespace Concordia42.Migrations
 
             student.Roles.Add(new IdentityUserRole { RoleId = studentRole.Id, UserId = student.Id });
 
-            context.Users.Add(student);
+            context.Users.AddOrUpdate(l => l.UserName, student);
 
             base.Seed(context);
             
