@@ -22,12 +22,12 @@ namespace Concordia42.Admin {
         protected global::System.Web.UI.WebControls.SqlDataSource UserSource;
         
         /// <summary>
-        /// DataList12222222222222 control.
+        /// DataList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataList12222222222222;
+        protected global::System.Web.UI.WebControls.DataList DataList;
     }
 }
