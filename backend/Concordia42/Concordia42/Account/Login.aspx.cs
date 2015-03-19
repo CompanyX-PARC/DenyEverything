@@ -38,7 +38,16 @@ namespace Concordia42.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
-                        IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        if (User.IsInRole("assistant") || (User.IsInRole("leader")) || (User.IsInRole("admin")))
+                        {
+                            Response.Redirect("/Account/Location");
+                        }
+                        else
+                        {
+                            IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        }
+                   
                         break;
                     case SignInStatus.LockedOut:
                         Response.Redirect("/Account/Lockout");

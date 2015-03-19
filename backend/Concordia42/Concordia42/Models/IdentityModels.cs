@@ -20,6 +20,7 @@ namespace Concordia42.Models
         public string VerificationCode { get; set; }
         // store profile in different table
         public virtual StudentProfile profile { get; set; }
+        public virtual Activity activity { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
@@ -46,6 +47,14 @@ namespace Concordia42.Models
             public string HearAboutUs { get; set; }
         }
 
+        public class Activity
+        {
+            public int Id { get; set; }
+            public Location currentLocation { get; set; }
+            public DateTime lastAction { get; set; }
+            public DateTime whenLoggedIn { get; set; }
+
+        }
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
