@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Concordia42.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +19,23 @@ namespace Concordia42.Account
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/");
+            ApplicationDbContext db = new ApplicationDbContext();
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+
+            Concordia42.Models.Location loc = db.Locations.First(l => l.locName == DropDownList1.Text.Trim());
+
+            /* if they picked a valid location */
+            if (loc != null)
+            {
+                var user = manager.FindById(User.Identity.GetUserId());
+                user.activity.currentLocation = loc;
+                manager.Update(user);
+                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+            }
+            else
+            {
+                // error
+            }
         }
     }
 }
