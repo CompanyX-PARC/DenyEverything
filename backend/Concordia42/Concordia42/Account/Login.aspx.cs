@@ -39,6 +39,9 @@ namespace Concordia42.Account
                 {
                     case SignInStatus.Success:
                         var user = manager.FindByEmail(Email.Text);
+                        user.activity = new Concordia42.Models.ApplicationUser.Activity();
+                        user.activity.whenLoggedIn = user.activity.lastAction = System.DateTime.Now;
+                        manager.Update(user);
                         //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         if (signinManager.UserManager.IsInRole(user.Id, "assistant") || signinManager.UserManager.IsInRole(user.Id, "admin") || signinManager.UserManager.IsInRole(user.Id, "leader"))
                         {

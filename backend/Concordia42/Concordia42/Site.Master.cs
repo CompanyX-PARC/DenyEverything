@@ -10,6 +10,7 @@ using Microsoft.Owin;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using Concordia42.Models;
 namespace Concordia42
 {
     public partial class SiteMaster : MasterPage
@@ -71,18 +72,33 @@ namespace Concordia42
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var user = manager.FindById(Context.User.Identity.GetUserId());
-            try { 
-                if (user != null) { 
-                    var l = ((Label)LoginViewControl.FindControl("UserNameLabel"));
-                    l.Text = user.FirstName;
-                    //Response.Write(user.FirstName + "DFFSFSDFDS" + Context.User.Identity.GetUserId());
+            if (Context.GetOwinContext().Authentication.User.Identity.IsAuthenticated) { 
+                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var user = manager.FindById(Context.User.Identity.GetUserId());
+                try { 
+                    if (user != null) { 
+                        var l = ((Label)LoginViewControl.FindControl("UserNameLabel"));
+                        l.Text = user.FirstName;
+                        //Response.Write(user.FirstName + "DFFSFSDFDS" + Context.User.Identity.GetUserId());
+                    }
                 }
-            }
-            catch (NullReferenceException ex)
-            {
-                // asp.net is fun :D :D :D
+                catch (NullReferenceException ex)
+                {
+                    // asp.net is fun :D :D :D
+                }
+
+                user.activity.lastAction = System.DateTime.Now;
+                manager.Update(user);
+
+                /* check location */
+                /*
+                if (user.activity.currentLocation == null)
+                {
+                    if (manager.IsInRole(user.Id, "assistant") || manager.IsInRole(user.Id, "leader") || manager.IsInRole(user.Id, "admin")) { 
+                    
+                        Response.Redirect("/Account/Location?ReturnUrl=" + Request.QueryString["ReturnUrl"]);
+                    }
+                } */
             }
         }
 
@@ -90,6 +106,19 @@ namespace Concordia42
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
+            /* db hit? :( */
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var user = manager.FindById(Context.User.Identity.GetUserId());
+
+            /* someday log, not destroy */
+            if (user != null && user.activity != null)
+            {
+                db.Entry(user.activity).State = System.Data.Entity.EntityState.Deleted;
+                user.activity = null;
+            }
+            manager.Update(user);
             Context.GetOwinContext().Authentication.SignOut();
         }
     }
