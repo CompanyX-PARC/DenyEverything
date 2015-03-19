@@ -47,5 +47,17 @@ namespace Concordia42.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new Concordia42.SiteMaster Master {
+            get {
+                return ((Concordia42.SiteMaster)(base.Master));
+            }
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace Concordia42.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Master.checkLocation = false; /* don't check location on this page -- else infinite redirect! */
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -29,7 +29,13 @@ namespace Concordia42.Account
             {
                 var user = manager.FindById(User.Identity.GetUserId());
                 user.activity.currentLocation = loc;
+
+                db.Entry(user.activity).State = System.Data.Entity.EntityState.Modified;
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+
+                db.SaveChanges();
                 manager.Update(user);
+               
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
             else

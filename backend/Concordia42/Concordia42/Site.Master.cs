@@ -19,6 +19,13 @@ namespace Concordia42
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
 
+        public Boolean checkLocation { get; set; }
+
+        public SiteMaster()
+        {
+            checkLocation = true;
+        }
+
         protected void Page_Init(object sender, EventArgs e)
         {
             // The code below helps to protect against XSRF attacks
@@ -87,18 +94,22 @@ namespace Concordia42
                     // asp.net is fun :D :D :D
                 }
 
-                user.activity.lastAction = System.DateTime.Now;
-                manager.Update(user);
-
-                /* check location */
-                /*
-                if (user.activity.currentLocation == null)
+                if (user != null && user.activity != null) // handle this?
                 {
-                    if (manager.IsInRole(user.Id, "assistant") || manager.IsInRole(user.Id, "leader") || manager.IsInRole(user.Id, "admin")) { 
+                    user.activity.lastAction = System.DateTime.Now;
+                    manager.Update(user);
+
+                    /* check location */
+                    /* seems really inefficient */
+                    /* can override this check on certain pages by setting checkLocation false */
+                    if (checkLocation && user.activity.currentLocation == null)
+                    {
+                        if (manager.IsInRole(user.Id, "assistant") || manager.IsInRole(user.Id, "leader") || manager.IsInRole(user.Id, "admin")) { 
                     
-                        Response.Redirect("/Account/Location?ReturnUrl=" + Request.QueryString["ReturnUrl"]);
-                    }
-                } */
+                            Response.Redirect("/Account/Location?ReturnUrl=" + Request.QueryString["ReturnUrl"]);
+                        }
+                    } 
+                }
             }
         }
 
@@ -117,8 +128,9 @@ namespace Concordia42
             {
                 db.Entry(user.activity).State = System.Data.Entity.EntityState.Deleted;
                 user.activity = null;
+                manager.Update(user);
             }
-            manager.Update(user);
+            
             Context.GetOwinContext().Authentication.SignOut();
         }
     }

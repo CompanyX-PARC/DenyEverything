@@ -83,7 +83,7 @@ namespace Concordia42.Models
 
         // I'm a table named Locations of type Location...
         public DbSet<Location> Locations { get; set; }
-
+        public DbSet<ApplicationUser.Activity> Activities { get; set; }
     }
 }
 
