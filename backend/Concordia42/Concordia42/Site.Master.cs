@@ -20,6 +20,7 @@ namespace Concordia42
         private string _antiXsrfTokenValue;
 
         public Boolean checkLocation { get; set; }
+        public string firstName { get; set; }
 
         public SiteMaster()
         {
@@ -85,7 +86,7 @@ namespace Concordia42
                 try { 
                     if (user != null) { 
                         var l = ((Label)LoginViewControl.FindControl("UserNameLabel"));
-                        l.Text = user.FirstName;
+                        l.Text = firstName = user.FirstName;
                         //Response.Write(user.FirstName + "DFFSFSDFDS" + Context.User.Identity.GetUserId());
                     }
                 }

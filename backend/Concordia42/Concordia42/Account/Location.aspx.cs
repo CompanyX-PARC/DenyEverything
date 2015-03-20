@@ -17,6 +17,13 @@ namespace Concordia42.Account
             Master.checkLocation = false; /* don't check location on this page -- else infinite redirect! */
         }
 
+        /* after the master page has been generated, fetch the username */
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+          
+            NameLabel.Text = Master.firstName; /* master page should have loaded the user name already -- use it! */
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             ApplicationDbContext db = new ApplicationDbContext();
