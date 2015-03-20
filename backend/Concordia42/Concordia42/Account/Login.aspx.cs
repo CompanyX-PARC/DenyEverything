@@ -34,14 +34,18 @@ namespace Concordia42.Account
                 // This doen't count login failures towards account lockout
                 // To enable password failures to trigger lockout, change to shouldLockout: true
                 var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
-
+                
                 switch (result)
                 {
                     case SignInStatus.Success:
+                        var user = manager.FindByEmail(Email.Text);
+                        user.activity = new Concordia42.Models.ApplicationUser.Activity();
+                        user.activity.whenLoggedIn = user.activity.lastAction = System.DateTime.Now;
+                        manager.Update(user);
                         //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                        if (User.IsInRole("assistant") || (User.IsInRole("leader")) || (User.IsInRole("admin")))
+                        if (signinManager.UserManager.IsInRole(user.Id, "assistant") || signinManager.UserManager.IsInRole(user.Id, "admin") || signinManager.UserManager.IsInRole(user.Id, "leader"))
                         {
-                            Response.Redirect("/Account/Location");
+                            Response.Redirect("/Account/Location?ReturnUrl=" + Request.QueryString["ReturnUrl"]);
                         }
                         else
                         {

@@ -9,6 +9,8 @@ using Microsoft.Owin.Security;
 using Concordia42.Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Concordia42.Models
 {
@@ -27,8 +29,6 @@ namespace Concordia42.Models
         //PROFILE
         public class StudentProfile
         {
-            public int Id { get; set; }
-            //public string Name { get; set; }
             public string Major { get; set; }
             public string Minor { get; set; }
             public string GradeLevel { get; set; }
@@ -45,14 +45,26 @@ namespace Concordia42.Models
             public Boolean DegreesProgram { get; set; }
             public Boolean SmartThinking { get; set; }
             public string HearAboutUs { get; set; }
+
+            [Key, ForeignKey("user")]
+            public string UserId { get; set; }
+
+            public virtual ApplicationUser user { get; set; }
         }
 
         public class Activity
         {
-            public int Id { get; set; }
-            public Location currentLocation { get; set; }
+            [ForeignKey("currentLocation")]
+            public int? locationId { get; set; }
+
+            public virtual Location currentLocation { get; set; }
             public DateTime lastAction { get; set; }
             public DateTime whenLoggedIn { get; set; }
+
+            [Key, ForeignKey("user")]
+            public string UserId { get; set; }
+
+            public virtual ApplicationUser user { get; set; }
 
         }
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
@@ -83,7 +95,7 @@ namespace Concordia42.Models
 
         // I'm a table named Locations of type Location...
         public DbSet<Location> Locations { get; set; }
-
+        public DbSet<ApplicationUser.Activity> Activities { get; set; }
     }
 }
 
