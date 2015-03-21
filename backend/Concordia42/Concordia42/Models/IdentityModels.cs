@@ -11,18 +11,25 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace Concordia42.Models
 {
     // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+
+        public ApplicationUser() : base()
+        {
+            activities = new List<Activity>();
+        }
+
         //USER 
         // STEAMGUARD style verification code
         public string VerificationCode { get; set; }
         // store profile in different table
         public virtual StudentProfile profile { get; set; }
-        public virtual Activity activity { get; set; }
+        public virtual ICollection<Activity> activities { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
