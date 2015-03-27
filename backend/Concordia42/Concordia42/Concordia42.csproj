@@ -176,7 +176,6 @@
     <Content Include="Account\Verify.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\UserList.aspx" />
-    <Content Include="Blah.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -379,13 +378,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Blah.aspx.cs">
-      <DependentUpon>Blah.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Blah.aspx.designer.cs">
-      <DependentUpon>Blah.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -410,6 +402,10 @@
     <Compile Include="Migrations\201503202108005_nullableLoc.cs" />
     <Compile Include="Migrations\201503202108005_nullableLoc.Designer.cs">
       <DependentUpon>201503202108005_nullableLoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503271918454_multipleActivities.cs" />
+    <Compile Include="Migrations\201503271918454_multipleActivities.Designer.cs">
+      <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -447,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503202108005_nullableLoc.resx">
       <DependentUpon>201503202108005_nullableLoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503271918454_multipleActivities.resx">
+      <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -53,9 +53,8 @@ namespace Concordia42.Models
             public Boolean SmartThinking { get; set; }
             public string HearAboutUs { get; set; }
 
-            [Key, ForeignKey("user")]
+            [Key, Required, ForeignKey("user")]
             public string UserId { get; set; }
-
             public virtual ApplicationUser user { get; set; }
         }
 
@@ -67,12 +66,15 @@ namespace Concordia42.Models
             public virtual Location currentLocation { get; set; }
             public DateTime lastAction { get; set; }
             public DateTime whenLoggedIn { get; set; }
+            public string sessionId { get; set; }
 
-            [Key, ForeignKey("user")]
+            [Required, ForeignKey("user")]
             public string UserId { get; set; }
 
             public virtual ApplicationUser user { get; set; }
 
+            [Key]
+            public int ActivityId { get; set; }
         }
         public ClaimsIdentity GenerateUserIdentity(ApplicationUserManager manager)
         {

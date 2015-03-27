@@ -29,21 +29,24 @@ namespace Concordia42.Account
             ApplicationDbContext db = new ApplicationDbContext();
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
 
-            Concordia42.Models.Location loc = db.Locations.First(l => l.locName == DropDownList1.Text.Trim());
+            var loc = db.Locations.First(l => l.locName == DropDownList1.Text.Trim());
 
             /* if they picked a valid location */
             if (loc != null)
             {
                 var user = manager.FindById(User.Identity.GetUserId());
-                user.activity.currentLocation = loc;
+                var activity = db.Activities.First(a => a.sessionId == Session.SessionID && a.user == user);
+                if (activity != null) { 
+                    activity.currentLocation = loc;
 
-                db.Entry(user.activity).State = System.Data.Entity.EntityState.Modified;
-                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                    db.Entry(activity).State = System.Data.Entity.EntityState.Modified;
+                    db.Entry(user).State = System.Data.Entity.EntityState.Modified;
 
-                db.SaveChanges();
-                manager.Update(user);
+                    db.SaveChanges();
+                    manager.Update(user);
                
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                }
             }
             else
             {

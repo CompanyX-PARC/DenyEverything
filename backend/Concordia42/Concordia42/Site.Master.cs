@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Concordia42.Models;
+using System.Linq;
+
 namespace Concordia42
 {
     public partial class SiteMaster : MasterPage
@@ -80,8 +82,9 @@ namespace Concordia42
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Context.GetOwinContext().Authentication.User.Identity.IsAuthenticated) { 
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            if (Context.GetOwinContext().Authentication.User.Identity.IsAuthenticated) {
+                ApplicationDbContext db = new ApplicationDbContext();
+                var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
                 var user = manager.FindById(Context.User.Identity.GetUserId());
                 try { 
                     if (user != null) { 
@@ -95,21 +98,26 @@ namespace Concordia42
                     // asp.net is fun :D :D :D
                 }
 
-                if (user != null && user.activity != null) // handle this?
+                if (user != null) // todo handle null user
                 {
-                    user.activity.lastAction = System.DateTime.Now;
-                    manager.Update(user);
+                    // find user's activity record
+                    var activity = db.Activities.First(a => a.sessionId == Session.SessionID && a.user == user);
 
-                    /* check location */
-                    /* seems really inefficient */
-                    /* can override this check on certain pages by setting checkLocation false */
-                    if (checkLocation && user.activity.currentLocation == null)
+                    if (activity != null) // todo handle null record here
                     {
-                        if (manager.IsInRole(user.Id, "assistant") || manager.IsInRole(user.Id, "leader") || manager.IsInRole(user.Id, "admin")) { 
+                        activity.lastAction = System.DateTime.Now;
                     
-                            Response.Redirect("/Account/Location?ReturnUrl=" + Request.QueryString["ReturnUrl"]);
+                        /* check location */
+                        /* seems really inefficient */
+                        /* can override this check on certain pages by setting checkLocation false */
+                        if (checkLocation && activity.currentLocation == null)
+                        {
+                            if (manager.IsInRole(user.Id, "assistant") || manager.IsInRole(user.Id, "leader") || manager.IsInRole(user.Id, "admin")) { 
+                    
+                                Response.Redirect("/Account/Location?ReturnUrl=" + Request.QueryString["ReturnUrl"]);
+                            }
                         }
-                    } 
+                    }
                 }
             }
         }
@@ -125,11 +133,13 @@ namespace Concordia42
             var user = manager.FindById(Context.User.Identity.GetUserId());
 
             /* someday log, not destroy */
-            if (user != null && user.activity != null)
+            if (user != null)
             {
-                db.Entry(user.activity).State = System.Data.Entity.EntityState.Deleted;
-                user.activity = null;
-                manager.Update(user);
+                var activity = db.Activities.First(a => a.sessionId == Session.SessionID && a.user == user);
+                if (activity != null) { 
+                    db.Entry(activity).State = System.Data.Entity.EntityState.Deleted;
+                    db.SaveChanges();
+                }
             }
             
             Context.GetOwinContext().Authentication.SignOut();
