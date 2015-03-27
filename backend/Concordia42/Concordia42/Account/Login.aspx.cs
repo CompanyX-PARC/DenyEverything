@@ -44,10 +44,16 @@ namespace Concordia42.Account
                         var user = manager.FindByEmail(Email.Text);
                         var activity = new Concordia42.Models.ApplicationUser.Activity();
                         activity.whenLoggedIn = activity.lastAction = System.DateTime.Now;
+
+                        /* start session */
+                        Session["init"] = true;
+
+                        // update activity record
                         activity.sessionId = Session.SessionID;
                         activity.user = user;
                         db.Activities.Add(activity);
                         db.SaveChanges();
+
                         manager.Update(user); // may not need this
                         //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         if (signinManager.UserManager.IsInRole(user.Id, "assistant") || signinManager.UserManager.IsInRole(user.Id, "admin") || signinManager.UserManager.IsInRole(user.Id, "leader"))

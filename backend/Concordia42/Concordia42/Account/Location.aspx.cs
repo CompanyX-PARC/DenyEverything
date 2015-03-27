@@ -35,7 +35,7 @@ namespace Concordia42.Account
             if (loc != null)
             {
                 var user = manager.FindById(User.Identity.GetUserId());
-                var activity = db.Activities.First(a => a.sessionId == Session.SessionID && a.user == user);
+                var activity = db.Activities.FirstOrDefault(a => a.sessionId == Session.SessionID && a.UserId == user.Id);
                 if (activity != null) { 
                     activity.currentLocation = loc;
 

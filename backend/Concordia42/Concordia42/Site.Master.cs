@@ -101,12 +101,13 @@ namespace Concordia42
                 if (user != null) // todo handle null user
                 {
                     // find user's activity record
-                    var activity = db.Activities.First(a => a.sessionId == Session.SessionID && a.user == user);
+                    var activity = db.Activities.FirstOrDefault(a => a.sessionId == Session.SessionID && a.UserId == user.Id);
 
                     if (activity != null) // todo handle null record here
                     {
                         activity.lastAction = System.DateTime.Now;
-                    
+                        db.SaveChanges();
+
                         /* check location */
                         /* seems really inefficient */
                         /* can override this check on certain pages by setting checkLocation false */
@@ -135,7 +136,7 @@ namespace Concordia42
             /* someday log, not destroy */
             if (user != null)
             {
-                var activity = db.Activities.First(a => a.sessionId == Session.SessionID && a.user == user);
+                var activity = db.Activities.FirstOrDefault(a => a.sessionId == Session.SessionID && a.UserId == user.Id);
                 if (activity != null) { 
                     db.Entry(activity).State = System.Data.Entity.EntityState.Deleted;
                     db.SaveChanges();
