@@ -83,10 +83,10 @@
                     <asp:Label ID="LastNameLabel" runat="server" Text='<%# Eval("LastName") %>' />
                 </td>
                 <td>
-                    <asp:Label ID="lastActionLabel" runat="server" Text='<%# Eval("lastAction") %>' />
+                    <asp:Label ID="lastActionLabel" runat="server" Text='<%# timeSince(Convert.ToDateTime(Eval("lastAction"))) %>' />
                 </td>
                 <td>
-                    <asp:Label ID="whenLoggedInLabel" runat="server" Text='<%# Eval("whenLoggedIn") %>' />
+                    <asp:Label ID="whenLoggedInLabel" runat="server" Text='<%# timeSince(Convert.ToDateTime(Eval("whenLoggedIn"))) %>' />
                 </td>
                 <td>
                     <asp:Label ID="locNameLabel" runat="server" Text='<%# Eval("locName") %>' />
@@ -101,9 +101,9 @@
                             <tr runat="server" style="">
                                 <th runat="server">FirstName</th>
                                 <th runat="server">LastName</th>
-                                <th runat="server">lastAction</th>
-                                <th runat="server">whenLoggedIn</th>
-                                <th runat="server">locName</th>
+                                <th runat="server">Last Action</th>
+                                <th runat="server">Login</th>
+                                <th runat="server">Location</th>
                             </tr>
                             <tr id="itemPlaceholder" runat="server">
                             </tr>
@@ -132,10 +132,10 @@
                     <asp:Label ID="LastNameLabel" runat="server" Text='<%# Eval("LastName") %>' />
                 </td>
                 <td>
-                    <asp:Label ID="lastActionLabel" runat="server" Text='<%# Eval("lastAction") %>' />
+                    <asp:Label ID="lastActionLabel" runat="server" Text='<%# timeSince(Convert.ToDateTime(Eval("lastAction"))) %>' />
                 </td>
                 <td>
-                    <asp:Label ID="whenLoggedInLabel" runat="server" Text='<%# Eval("whenLoggedIn") %>' />
+                    <asp:Label ID="whenLoggedInLabel" runat="server" Text='<%# timeSince(Convert.ToDateTime(Eval("whenLoggedIn"))) %>' />
                 </td>
                 <td>
                     <asp:Label ID="locNameLabel" runat="server" Text='<%# Eval("locName") %>' />

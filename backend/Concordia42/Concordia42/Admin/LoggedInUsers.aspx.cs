@@ -13,5 +13,14 @@ namespace Concordia42.Admin
         {
 
         }
+
+        protected string timeSince(DateTime t)
+        {
+            // inspired by http://stackoverflow.com/questions/2780523/time-like-facebook-style-min-ago
+            TimeSpan diff = DateTime.Now.Subtract(t);
+            if (diff.TotalMinutes < 60)
+                return t + string.Format(" ({0} minutes ago)", diff.Minutes);
+            return t + string.Format(" ({0} hours ago)", diff.Hours);
+        }
     }
 }
