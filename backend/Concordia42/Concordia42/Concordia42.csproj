@@ -172,12 +172,15 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\Verify.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\ExpandedUserInfo.aspx" />
     <Content Include="Admin\UserDetail.aspx" />
     <Content Include="Admin\WebForm1.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Errors\AbandonShip.aspx" />
+    <Content Include="Errors\ConcordiaError.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -358,6 +361,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ExpandedUserInfo.aspx.cs">
+      <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ExpandedUserInfo.aspx.designer.cs">
+      <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\UserDetail.aspx.cs">
       <DependentUpon>UserDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -396,6 +406,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\AbandonShip.aspx.cs">
+      <DependentUpon>AbandonShip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\AbandonShip.aspx.designer.cs">
+      <DependentUpon>AbandonShip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\ConcordiaError.aspx.cs">
+      <DependentUpon>ConcordiaError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\ConcordiaError.aspx.designer.cs">
+      <DependentUpon>ConcordiaError.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
