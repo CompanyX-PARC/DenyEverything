@@ -1,12 +1,13 @@
 ﻿<%@ Page Title="User List" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="Concordia42.Admin.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Registered Students</h2>
-    <asp:SqlDataSource ID="UserSource" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT AspNetUsers.Email, StudentProfiles.Name, StudentProfiles.Major, StudentProfiles.Minor, StudentProfiles.GradeLevel, StudentProfiles.GradSemester, StudentProfiles.WhySeking, StudentProfiles.NeedHelpWith, StudentProfiles.Gender, StudentProfiles.Ethnicity, StudentProfiles.International, StudentProfiles.CountryOfOrigin, StudentProfiles.HomeLanguages, StudentProfiles.ReceivingServices, StudentProfiles.ReceivingServicesFrom, StudentProfiles.DegreesProgram, StudentProfiles.SmartThinking, StudentProfiles.HearAboutUs FROM AspNetUsers LEFT OUTER JOIN StudentProfiles ON AspNetUsers.profile_Id = StudentProfiles.Id"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="UserSource" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT AspNetUsers.Email, AspNetUsers.FirstName, AspNetUsers.LastName, StudentProfiles.Major, StudentProfiles.Minor, StudentProfiles.GradeLevel, StudentProfiles.GradSemester, StudentProfiles.WhySeking, StudentProfiles.NeedHelpWith, StudentProfiles.Gender, StudentProfiles.Ethnicity, StudentProfiles.International, StudentProfiles.CountryOfOrigin, StudentProfiles.HomeLanguages, StudentProfiles.ReceivingServices, StudentProfiles.ReceivingServicesFrom, StudentProfiles.DegreesProgram, StudentProfiles.SmartThinking, StudentProfiles.HearAboutUs FROM AspNetUsers LEFT OUTER JOIN StudentProfiles ON AspNetUsers.Id = StudentProfiles.UserId"></asp:SqlDataSource>
     <asp:DataList ID="DataList1" runat="server" CssClass="table table-striped" DataSourceID="UserSource">
         <HeaderTemplate>
 
             <th>Email</th>
-            <th>Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>Major</th>
             <th>Minor</th>
             <th>Grade</th>
@@ -28,7 +29,8 @@
         <ItemTemplate>
          
                 <td><%# Eval("Email") %></td>
-                <td><%# Eval("Name") %></td>
+                <td><%# Eval("FirstName") %></td>
+                <td><%# Eval("LastName") %></td>
                 <td><%# Eval("Major") %></td>
                 <td><%# Eval("Minor") %></td>
                 <td><%# Eval("GradeLevel") %></td>
