@@ -94,6 +94,9 @@
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="WebDriver">
+      <HintPath>..\packages\Selenium.WebDriver.2.45.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -172,6 +175,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\Verify.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\LoggedInUsers.aspx" />
     <Content Include="Admin\UserList.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -183,6 +187,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -357,6 +362,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\LoggedInUsers.aspx.cs">
+      <DependentUpon>LoggedInUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoggedInUsers.aspx.designer.cs">
+      <DependentUpon>LoggedInUsers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -400,6 +412,10 @@
     <Compile Include="Migrations\201503202108005_nullableLoc.Designer.cs">
       <DependentUpon>201503202108005_nullableLoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503271918454_multipleActivities.cs" />
+    <Compile Include="Migrations\201503271918454_multipleActivities.Designer.cs">
+      <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
@@ -436,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503202108005_nullableLoc.resx">
       <DependentUpon>201503202108005_nullableLoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503271918454_multipleActivities.resx">
+      <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

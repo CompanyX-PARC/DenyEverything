@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using Concordia42.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Concordia42.Account
 {
@@ -28,7 +29,9 @@ namespace Concordia42.Account
             if (IsValid)
             {
                 // Validate the user password
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                ApplicationDbContext db = new ApplicationDbContext();
+                var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                //var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
 
                 // This doen't count login failures towards account lockout
@@ -39,9 +42,19 @@ namespace Concordia42.Account
                 {
                     case SignInStatus.Success:
                         var user = manager.FindByEmail(Email.Text);
-                        user.activity = new Concordia42.Models.ApplicationUser.Activity();
-                        user.activity.whenLoggedIn = user.activity.lastAction = System.DateTime.Now;
-                        manager.Update(user);
+                        var activity = new Concordia42.Models.ApplicationUser.Activity();
+                        activity.whenLoggedIn = activity.lastAction = System.DateTime.Now;
+
+                        /* start session */
+                        Session["init"] = true;
+
+                        // update activity record
+                        activity.sessionId = Session.SessionID;
+                        activity.user = user;
+                        db.Activities.Add(activity);
+                        db.SaveChanges();
+
+                        manager.Update(user); // may not need this
                         //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                         if (signinManager.UserManager.IsInRole(user.Id, "assistant") || signinManager.UserManager.IsInRole(user.Id, "admin") || signinManager.UserManager.IsInRole(user.Id, "leader"))
                         {
