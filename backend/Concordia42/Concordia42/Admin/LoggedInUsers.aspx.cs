@@ -18,8 +18,9 @@ namespace Concordia42.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-                db = new ApplicationDbContext();
-                userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            db = new ApplicationDbContext();
+            userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            UserGridView.HeaderRow.TableSection = TableRowSection.TableHeader;
         }
 
         protected string rolesToString(IList<string> list)
@@ -46,7 +47,7 @@ namespace Concordia42.Admin
             TimeSpan diff = DateTime.Now.Subtract(t);
             if (diff.TotalSeconds < 60)
             {
-                return t + "(just now)";
+                return t + " (just now)";
             }
             else if (diff.TotalMinutes < 60) { 
                 return t + string.Format(" ({0} minutes ago)", diff.Minutes);
@@ -58,6 +59,11 @@ namespace Concordia42.Admin
             {
                 return t + string.Format(" ({0} days ago)", diff.Days);
             }
+        }
+
+        protected string locName(Object s)
+        {
+            return (s is DBNull) ? "Off Campus" : (string)s;
         }
     }
 }

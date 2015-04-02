@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LoggedInUsers.aspx.cs" Inherits="Concordia42.Admin.LoggedInUsers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Logged In Users</h2>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="LoggedInUserDataSource">
+    <asp:GridView ID="UserGridView" GridLines="None" UseAccessibleHeader="true" CssClass="table table-striped" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="LoggedInUserDataSource">
         <Columns>
             <asp:BoundField DataField="FirstName" HeaderText="First Name" SortExpression="FirstName" />
             <asp:BoundField DataField="LastName" HeaderText="Last Name" SortExpression="LastName" />
@@ -15,8 +15,12 @@
                       <asp:Label ID="whenLoggedInLabel" runat="server" Text='<%# timeSince(Convert.ToDateTime(Eval("whenLoggedIn"))) %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:BoundField DataField="locName" HeaderText="locName" SortExpression="locName" />
-            <asp:TemplateField HeaderText="Role" SortExpression="role">
+            <asp:TemplateField HeaderText="Location" SortExpression="locName">
+                <ItemTemplate>
+                      <asp:Label ID="locLabel" runat="server" Text='<%# locName(Eval("locName")) %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Role">
                 <ItemTemplate>
                       <asp:Label ID="roleLabel" runat="server" Text='<%# rolesToString(userManager.GetRoles((string)Eval("Id"))) %>'></asp:Label>
                 </ItemTemplate>
