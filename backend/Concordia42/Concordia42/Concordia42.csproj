@@ -172,6 +172,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\Verify.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\ExpandedUserInfo.aspx" />
     <Content Include="Admin\UserDetail.aspx" />
     <Content Include="Admin\WebForm1.aspx" />
     <Content Include="Contact.aspx" />
@@ -357,6 +358,13 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ExpandedUserInfo.aspx.cs">
+      <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ExpandedUserInfo.aspx.designer.cs">
+      <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\UserDetail.aspx.cs">
       <DependentUpon>UserDetail.aspx</DependentUpon>
