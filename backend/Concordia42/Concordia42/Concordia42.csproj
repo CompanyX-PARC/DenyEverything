@@ -177,6 +177,10 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\LoggedInUsers.aspx" />
     <Content Include="Admin\UserList.aspx" />
+    <Content Include="Admin\CreateAccount.aspx" />
+    <Content Include="Admin\ExpandedUserInfo.aspx" />
+    <Content Include="Admin\UserDetail.aspx" />
+    <Content Include="Admin\WebForm1.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -222,6 +226,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Swipe.aspx" />
+    <Content Include="User\AdminDashboard.aspx" />
+    <Content Include="User\SIDashboard.aspx" />
+    <Content Include="User\StaffDashboard.aspx" />
+    <Content Include="User\StudentDashboard.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -364,6 +373,23 @@
     </Compile>
     <Compile Include="Admin\LoggedInUsers.aspx.cs">
       <DependentUpon>LoggedInUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateAccount.aspx.designer.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ExpandedUserInfo.aspx.cs">
+      <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ExpandedUserInfo.aspx.designer.cs">
+      <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserDetail.aspx.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\LoggedInUsers.aspx.designer.cs">
@@ -435,6 +461,41 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Swipe.aspx.cs">
+      <DependentUpon>Swipe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Swipe.aspx.designer.cs">
+      <DependentUpon>Swipe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\SIDashboard.aspx.cs">
+      <DependentUpon>SIDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\SIDashboard.aspx.designer.cs">
+      <DependentUpon>SIDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\StaffDashboard.aspx.cs">
+      <DependentUpon>StaffDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\StaffDashboard.aspx.designer.cs">
+      <DependentUpon>StaffDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\StudentDashboard.aspx.cs">
+      <DependentUpon>StudentDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\StudentDashboard.aspx.designer.cs">
+      <DependentUpon>StudentDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
