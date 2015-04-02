@@ -13,6 +13,15 @@ namespace Concordia42 {
     public partial class SiteMaster {
         
         /// <summary>
+        /// LoginViewControl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LoginView LoginViewControl;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

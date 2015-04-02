@@ -94,6 +94,9 @@
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="WebDriver">
+      <HintPath>..\packages\Selenium.WebDriver.2.45.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -172,8 +175,8 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\Verify.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Admin\UserDetail.aspx" />
-    <Content Include="Admin\WebForm1.aspx" />
+    <Content Include="Admin\LoggedInUsers.aspx" />
+    <Content Include="Admin\UserList.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -184,6 +187,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -358,19 +362,19 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\UserDetail.aspx.cs">
-      <DependentUpon>UserDetail.aspx</DependentUpon>
+    <Compile Include="Admin\LoggedInUsers.aspx.cs">
+      <DependentUpon>LoggedInUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\UserDetail.aspx.designer.cs">
-      <DependentUpon>UserDetail.aspx</DependentUpon>
+    <Compile Include="Admin\LoggedInUsers.aspx.designer.cs">
+      <DependentUpon>LoggedInUsers.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Admin\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Admin\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -400,29 +404,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503051849158_Initial.cs" />
-    <Compile Include="Migrations\201503051849158_Initial.Designer.cs">
-      <DependentUpon>201503051849158_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201503202056209_initial.cs" />
+    <Compile Include="Migrations\201503202056209_initial.Designer.cs">
+      <DependentUpon>201503202056209_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503051855396_Initial1.cs" />
-    <Compile Include="Migrations\201503051855396_Initial1.Designer.cs">
-      <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\201503202108005_nullableLoc.cs" />
+    <Compile Include="Migrations\201503202108005_nullableLoc.Designer.cs">
+      <DependentUpon>201503202108005_nullableLoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503062310166_forLocation.cs" />
-    <Compile Include="Migrations\201503062310166_forLocation.Designer.cs">
-      <DependentUpon>201503062310166_forLocation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201503062321482_newLocTable.cs" />
-    <Compile Include="Migrations\201503062321482_newLocTable.Designer.cs">
-      <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201503121802088_addedName.cs" />
-    <Compile Include="Migrations\201503121802088_addedName.Designer.cs">
-      <DependentUpon>201503121802088_addedName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201503131831316_activityTable.cs" />
-    <Compile Include="Migrations\201503131831316_activityTable.Designer.cs">
-      <DependentUpon>201503131831316_activityTable.cs</DependentUpon>
+    <Compile Include="Migrations\201503271918454_multipleActivities.cs" />
+    <Compile Include="Migrations\201503271918454_multipleActivities.Designer.cs">
+      <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -455,23 +447,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503051849158_Initial.resx">
-      <DependentUpon>201503051849158_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503202056209_initial.resx">
+      <DependentUpon>201503202056209_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503051855396_Initial1.resx">
-      <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503202108005_nullableLoc.resx">
+      <DependentUpon>201503202108005_nullableLoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503062310166_forLocation.resx">
-      <DependentUpon>201503062310166_forLocation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503062321482_newLocTable.resx">
-      <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503121802088_addedName.resx">
-      <DependentUpon>201503121802088_addedName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503131831316_activityTable.resx">
-      <DependentUpon>201503131831316_activityTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503271918454_multipleActivities.resx">
+      <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
