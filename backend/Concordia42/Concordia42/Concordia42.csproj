@@ -176,7 +176,6 @@
     <Content Include="Account\Verify.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin\LoggedInUsers.aspx" />
-    <Content Include="Admin\UserList.aspx" />
     <Content Include="Admin\CreateAccount.aspx" />
     <Content Include="Admin\ExpandedUserInfo.aspx" />
     <Content Include="Admin\UserDetail.aspx" />
@@ -373,6 +372,7 @@
     </Compile>
     <Compile Include="Admin\LoggedInUsers.aspx.cs">
       <DependentUpon>LoggedInUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\CreateAccount.aspx.cs">
       <DependentUpon>CreateAccount.aspx</DependentUpon>
@@ -388,19 +388,19 @@
     <Compile Include="Admin\ExpandedUserInfo.aspx.designer.cs">
       <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\UserDetail.aspx.cs">
       <DependentUpon>UserDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\LoggedInUsers.aspx.designer.cs">
       <DependentUpon>LoggedInUsers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\UserList.aspx.cs">
-      <DependentUpon>UserList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\UserList.aspx.designer.cs">
-      <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
