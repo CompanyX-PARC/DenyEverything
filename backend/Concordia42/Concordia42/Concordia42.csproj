@@ -38,6 +38,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -86,6 +94,9 @@
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="WebDriver">
+      <HintPath>..\packages\Selenium.WebDriver.2.45.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -107,12 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
@@ -170,7 +175,11 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\Verify.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Admin\UserList.aspx" />
+    <Content Include="Admin\LoggedInUsers.aspx" />
+    <Content Include="Admin\CreateAccount.aspx" />
+    <Content Include="Admin\ExpandedUserInfo.aspx" />
+    <Content Include="Admin\UserDetail.aspx" />
+    <Content Include="Admin\WebForm1.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -182,6 +191,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -216,6 +226,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Swipe.aspx" />
+    <Content Include="User\AdminDashboard.aspx" />
+    <Content Include="User\SIDashboard.aspx" />
+    <Content Include="User\StaffDashboard.aspx" />
+    <Content Include="User\StudentDashboard.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -356,12 +371,37 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\UserList.aspx.cs">
-      <DependentUpon>UserList.aspx</DependentUpon>
+    <Compile Include="Admin\LoggedInUsers.aspx.cs">
+      <DependentUpon>LoggedInUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\UserList.aspx.designer.cs">
-      <DependentUpon>UserList.aspx</DependentUpon>
+    <Compile Include="Admin\CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateAccount.aspx.designer.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ExpandedUserInfo.aspx.cs">
+      <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ExpandedUserInfo.aspx.designer.cs">
+      <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserDetail.aspx.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoggedInUsers.aspx.designer.cs">
+      <DependentUpon>LoggedInUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -398,21 +438,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503051849158_Initial.cs" />
-    <Compile Include="Migrations\201503051849158_Initial.Designer.cs">
-      <DependentUpon>201503051849158_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201503202056209_initial.cs" />
+    <Compile Include="Migrations\201503202056209_initial.Designer.cs">
+      <DependentUpon>201503202056209_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503051855396_Initial1.cs" />
-    <Compile Include="Migrations\201503051855396_Initial1.Designer.cs">
-      <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\201503202108005_nullableLoc.cs" />
+    <Compile Include="Migrations\201503202108005_nullableLoc.Designer.cs">
+      <DependentUpon>201503202108005_nullableLoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503062310166_forLocation.cs" />
-    <Compile Include="Migrations\201503062310166_forLocation.Designer.cs">
-      <DependentUpon>201503062310166_forLocation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201503062321482_newLocTable.cs" />
-    <Compile Include="Migrations\201503062321482_newLocTable.Designer.cs">
-      <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
+    <Compile Include="Migrations\201503271918454_multipleActivities.cs" />
+    <Compile Include="Migrations\201503271918454_multipleActivities.Designer.cs">
+      <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201503121704467_studentIdField.cs" />
     <Compile Include="Migrations\201503121704467_studentIdField.Designer.cs">
@@ -437,6 +473,41 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Swipe.aspx.cs">
+      <DependentUpon>Swipe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Swipe.aspx.designer.cs">
+      <DependentUpon>Swipe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\SIDashboard.aspx.cs">
+      <DependentUpon>SIDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\SIDashboard.aspx.designer.cs">
+      <DependentUpon>SIDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\StaffDashboard.aspx.cs">
+      <DependentUpon>StaffDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\StaffDashboard.aspx.designer.cs">
+      <DependentUpon>StaffDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\StudentDashboard.aspx.cs">
+      <DependentUpon>StudentDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\StudentDashboard.aspx.designer.cs">
+      <DependentUpon>StudentDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -449,17 +520,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503051849158_Initial.resx">
-      <DependentUpon>201503051849158_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503202056209_initial.resx">
+      <DependentUpon>201503202056209_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503051855396_Initial1.resx">
-      <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503202108005_nullableLoc.resx">
+      <DependentUpon>201503202108005_nullableLoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503062310166_forLocation.resx">
-      <DependentUpon>201503062310166_forLocation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503062321482_newLocTable.resx">
-      <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503271918454_multipleActivities.resx">
+      <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503121704467_studentIdField.resx">
       <DependentUpon>201503121704467_studentIdField.cs</DependentUpon>
