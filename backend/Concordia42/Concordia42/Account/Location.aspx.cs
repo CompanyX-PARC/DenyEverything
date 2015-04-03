@@ -44,13 +44,32 @@ namespace Concordia42.Account
 
                     db.SaveChanges();
                     manager.Update(user);
-               
-                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+
+                    if (String.IsNullOrEmpty(Request.QueryString["ReturnUrl"]))
+                    {
+                        if (manager.IsInRole(user.Id, "assistant")) {
+                             Response.Redirect("~/User/StaffDashboard");
+                        }
+                            
+                        else if (manager.IsInRole(user.Id, "leader")) {
+                            Response.Redirect("~/User/SIDashboard");
+                        }
+                        
+                        else if (manager.IsInRole(user.Id, "admin")) {
+                             Response.Redirect("~/User/AdminDashboard");
+                        }
+                        else
+                        {
+                            Response.Redirect("~/User/StudentDashboard");
+                        }
+                    } else { 
+                        IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                    }
                 }
             }
             else
             {
-                // error
+                // error -- location was null
             }
         }
     }
