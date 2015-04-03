@@ -3,7 +3,7 @@ namespace Concordia42.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class studentIdField : DbMigration
+    public partial class studentId : DbMigration
     {
         public override void Up()
         {

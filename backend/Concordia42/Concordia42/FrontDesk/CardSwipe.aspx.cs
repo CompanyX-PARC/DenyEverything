@@ -14,6 +14,9 @@ namespace Concordia42.FrontDesk
 {
     public partial class CardSwipe : System.Web.UI.Page
     {
+
+        public string studentId { get; set;  }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             IdBox.Focus();
@@ -27,15 +30,15 @@ namespace Concordia42.FrontDesk
 
             var user = db.Users.FirstOrDefault(u => u.StudentId.Equals(IdBox.Text.Trim()));
 
+            /* didn't find a user, either first time or not at PARC */
             if (user == null)
             {
-                ErrorMessage.Text = "Couldn't find user!";
-                ErrorDiv.Visible = true;
-                SuccessDiv.Visible = false;
+                studentId = IdBox.Text.Trim();
+                Server.Transfer("~/FrontDesk/VerifyUser.aspx");
             }
             else
             {
-                SuccessMessage.Text = "Found user: " + user.Email;
+                SuccessMessage.Text = "Found verified user: " + user.Email;
                 SuccessDiv.Visible = true;
                 ErrorDiv.Visible = false;
             }

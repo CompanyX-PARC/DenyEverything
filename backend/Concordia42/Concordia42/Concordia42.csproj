@@ -186,6 +186,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FrontDesk\CardSwipe.aspx" />
+    <Content Include="FrontDesk\VerifyUser.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -435,6 +436,13 @@
     <Compile Include="FrontDesk\CardSwipe.aspx.designer.cs">
       <DependentUpon>CardSwipe.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FrontDesk\VerifyUser.aspx.cs">
+      <DependentUpon>VerifyUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontDesk\VerifyUser.aspx.designer.cs">
+      <DependentUpon>VerifyUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -450,9 +458,9 @@
     <Compile Include="Migrations\201503271918454_multipleActivities.Designer.cs">
       <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503121704467_studentIdField.cs" />
-    <Compile Include="Migrations\201503121704467_studentIdField.Designer.cs">
-      <DependentUpon>201503121704467_studentIdField.cs</DependentUpon>
+    <Compile Include="Migrations\201504032022590_studentId.cs" />
+    <Compile Include="Migrations\201504032022590_studentId.Designer.cs">
+      <DependentUpon>201504032022590_studentId.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -529,8 +537,8 @@
     <EmbeddedResource Include="Migrations\201503271918454_multipleActivities.resx">
       <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503121704467_studentIdField.resx">
-      <DependentUpon>201503121704467_studentIdField.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504032022590_studentId.resx">
+      <DependentUpon>201504032022590_studentId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

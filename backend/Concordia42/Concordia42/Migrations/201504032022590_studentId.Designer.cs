@@ -6,14 +6,14 @@ namespace Concordia42.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class studentIdField : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class studentId : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(studentIdField));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(studentId));
         
         string IMigrationMetadata.Id
         {
-            get { return "201503121704467_studentIdField"; }
+            get { return "201504032022590_studentId"; }
         }
         
         string IMigrationMetadata.Source
