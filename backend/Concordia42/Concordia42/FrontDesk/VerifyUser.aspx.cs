@@ -12,7 +12,7 @@ namespace Concordia42.FrontDesk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string email = Request.QueryString["email"];
+           
 
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -22,10 +22,28 @@ namespace Concordia42.FrontDesk
 
             if (user != null)
             {
-                FirstNameLabel.Text = user.FirstName;
-                LastNameLabel.Text = user.LastName;
-                EmailLabel.Text = user.Email;
+                //FirstNameLabel.Text = user.FirstName;
+                //LastNameLabel.Text = user.LastName;
+                //EmailLabel.Text = user.Email;
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            /* try to get a user with this email */
+
+            var user = db.Users.FirstOrDefault(u => u.Email.Equals(ListBox1.SelectedValue));
+
+            if (user != null && !String.IsNullOrEmpty(PreviousPage.studentId))
+            {
+                user.StudentId = PreviousPage.studentId.Trim(); // todo more verification
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                Response.Redirect("~/FrontDesk/CardSwipe?m=success");
+            }
+
         }
     }
 }
