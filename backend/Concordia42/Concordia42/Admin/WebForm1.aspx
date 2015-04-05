@@ -3,11 +3,11 @@
  <h2>Registered Students</h2>
 
     <asp:SqlDataSource ID="UserSource" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Email], [FirstName], [LastName] FROM [AspNetUsers]"></asp:SqlDataSource> 
-        <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped" AllowPaging="True" PageSize="3" ForeColor="Black" AutoGenerateColumns ="False" DataSourceID="UserSource">
+        <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-bordered" AllowPaging="True" PageSize="3" ForeColor="Black" AutoGenerateColumns ="False" DataSourceID="UserSource">
             <Columns>
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
-                <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
+                <asp:BoundField DataField="First Name" HeaderText="FirstName" SortExpression="FirstName" />
+                <asp:BoundField DataField="Last Name" HeaderText="LastName" SortExpression="LastName" />
                 <asp:TemplateField HeaderText="More Info"> 
                     <ItemTemplate> 
                         <asp:HyperLink runat="server" Text="Details" NavigateUrl='<%# Eval("Email", "~/Admin/ExpandedUserInfo.aspx?Email={0}") %>'></asp:HyperLink>
