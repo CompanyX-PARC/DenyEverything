@@ -33,8 +33,8 @@ namespace Concordia42.FrontDesk
             /* didn't find a user, either first time or not at PARC */
             if (user == null)
             {
-                studentId = IdBox.Text.Trim();
-                Server.Transfer("~/FrontDesk/VerifyUser.aspx");
+                Session["sId"] = IdBox.Text.Trim();
+                Response.Redirect("~/FrontDesk/VerifyUser.aspx");
             }
             else
             {

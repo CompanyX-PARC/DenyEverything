@@ -16,8 +16,8 @@
         Please check the student's ID card to make sure the picture matches their appearance.
             </div>
     <div class="form-group col-md-8 col-md-offset-3">
-        <asp:Button runat="server" CssClass="btn btn-success btn-lg" Text="Yep, accept" ID="Button1" OnClick="Button1_Click"/> 
-        <asp:Button runat="server" CssClass="btn btn-danger btn-lg pull-right" Text="Nope, reject" ID="VerifyButton"/> 
+        <asp:Button runat="server" CssClass="btn btn-success btn-lg" Text="Yep, accept" ID="AcceptButton" OnClick="AcceptButton_Click"/> 
+        <asp:Button runat="server" CssClass="btn btn-danger btn-lg pull-right" Text="Nope, reject" ID="RejectButton" OnClick="RejectButton_Click"/> 
     </div>
         </fieldset>
         </div>

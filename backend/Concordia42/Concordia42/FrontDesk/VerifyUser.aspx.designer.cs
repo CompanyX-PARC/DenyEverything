@@ -31,22 +31,22 @@ namespace Concordia42.FrontDesk {
         protected global::System.Web.UI.WebControls.SqlDataSource UserDadaSource;
         
         /// <summary>
-        /// Button1 control.
+        /// AcceptButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button AcceptButton;
         
         /// <summary>
-        /// VerifyButton control.
+        /// RejectButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button VerifyButton;
+        protected global::System.Web.UI.WebControls.Button RejectButton;
         
         /// <summary>
         /// PreviousPage property.

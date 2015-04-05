@@ -12,23 +12,13 @@ namespace Concordia42.FrontDesk
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-
-            ApplicationDbContext db = new ApplicationDbContext();
-
-            /* try to get a user with this email */
-
-            var user = db.Users.FirstOrDefault(u => u.StudentId != null);
-
-            if (user != null)
+            if (Session["sId"] == null || String.IsNullOrEmpty(((string)Session["sId"]).Trim()))
             {
-                //FirstNameLabel.Text = user.FirstName;
-                //LastNameLabel.Text = user.LastName;
-                //EmailLabel.Text = user.Email;
+                Response.Redirect("~/FrontDesk/CardSwipe?m=noSid");
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void AcceptButton_Click(object sender, EventArgs e)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -36,14 +26,22 @@ namespace Concordia42.FrontDesk
 
             var user = db.Users.FirstOrDefault(u => u.Email.Equals(ListBox1.SelectedValue));
 
-            if (user != null && !String.IsNullOrEmpty(PreviousPage.studentId))
+            string sId = ((string)Session["sId"]).Trim();
+
+            if (user != null && !String.IsNullOrEmpty(sId))
             {
-                user.StudentId = PreviousPage.studentId.Trim(); // todo more verification
+                user.StudentId = sId; // todo more verification
                 db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
+                Session["sId"] = null;
                 Response.Redirect("~/FrontDesk/CardSwipe?m=success");
             }
+        }
 
+        protected void RejectButton_Click(object sender, EventArgs e)
+        {
+            Session["sId"] = null;
+            Response.Redirect("~/FrontDesk/CardSwipe?m=nope");
         }
     }
 }
