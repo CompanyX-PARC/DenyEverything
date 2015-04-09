@@ -14,6 +14,7 @@ namespace Concordia42.Account
     {
         protected void CreateUser_Click(object sender, EventArgs e)
         {
+            var db = new ApplicationDbContext();
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
             var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text };
@@ -37,16 +38,31 @@ namespace Concordia42.Account
                 user.LastName = LastName.Text.Trim();
                 manager.Update(user);
 
-                manager.SendEmail(user.Id, "Please confirm your PARC account", "<h1>Welcome to PARC!</h1><p>You need to verify your PARC account.</p>" +
+                manager.SendEmail(user.Id, "Please confirm your PARC account", "<h1>Welcome to the PARC!</h1><p>You need to verify your PARC account.</p>" +
                     "<p>You should be seeing a page asking you to enter a verification code.</p><p>Enter this code: <strong>" + password + "</strong></p>" +
                     "<p>If you don't see the verification page, or you closed the browser window, that's okay! " +
                     "<br />You can instead verify your account by <a href=\"" + callbackUrl + "\">clicking here</a>.</p>" +
-                    "<p><em>Peer and Academic Resource Center<br/>CSU Sacramento</em></p>" +
+                    "<p><em>The Peer and Academic Resource Center<br/>CSU Sacramento</em></p>" +
                     "<p><br />P.S. If you didn't register for a PARC account, don't worry; you don't have to do anything. You can safely ignore this email.</p>\r\n\r\n");
 
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-                IdentityHelper.RedirectToReturnUrl("~/Account/Verify", Response);
 
+                // create the user an Activities record
+                db.Users.Attach(user);
+
+                var activity = new Concordia42.Models.ApplicationUser.Activity();
+                activity.whenLoggedIn = activity.lastAction = System.DateTime.Now;
+
+                /* start session */
+                Session["init"] = true;
+
+                // update activity record
+                activity.sessionId = Session.SessionID;
+                activity.user = user;
+                db.Activities.Add(activity);
+                db.SaveChanges();
+
+                IdentityHelper.RedirectToReturnUrl("~/Account/Verify", Response);
             }
             else 
             {
