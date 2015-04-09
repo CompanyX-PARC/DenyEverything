@@ -73,6 +73,15 @@
             </div>
 
             <div class="form-group">
+                <asp:Label runat="server" ID="StudentRoleLabel" CssClass="col-md-2 control-label">Account Type</asp:Label>
+                <div class="col-md-10">
+                    <asp:DropDownList runat="server" ID="StudentRoleDropdown" CssClass="form-control" SetFocusOnError="true" >
+                        <asp:ListItem>Student</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+            </div>
+
+            <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <asp:Button runat="server" OnClick="CreateUser_Click" Text="Create Account »" CssClass="btn btn-primary" />
                 </div>
