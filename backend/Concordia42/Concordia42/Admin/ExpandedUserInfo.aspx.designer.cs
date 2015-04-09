@@ -13,6 +13,24 @@ namespace Concordia42.Admin {
     public partial class ExpandedUserInfo {
         
         /// <summary>
+        /// EditButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EditButton;
+        
+        /// <summary>
+        /// DeleteButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DeleteButton;
+        
+        /// <summary>
         /// UserSource control.
         /// </summary>
         /// <remarks>
@@ -31,12 +49,12 @@ namespace Concordia42.Admin {
         protected global::System.Web.UI.WebControls.ListView ListView1;
         
         /// <summary>
-        /// emailLabel control.
+        /// dialog1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailLabel;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dialog1;
     }
 }
