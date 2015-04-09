@@ -27,6 +27,10 @@ namespace Concordia42.Models
         //USER 
         // STEAMGUARD style verification code
         public string VerificationCode { get; set; }
+
+        // student ID Number
+        public string StudentId { get; set; }
+
         // store profile in different table
         public virtual StudentProfile profile { get; set; }
         public virtual ICollection<Activity> activities { get; set; }
