@@ -4,7 +4,9 @@
 <h2>User Details</h2>
     <div class="form-group">
         <asp:Button runat="server" Text="Edit" ID="EditButton" CssClass="btn btn-primary" />
-        <asp:Button runat="server" Text="Delete" ID="DeleteButton" CssClass="btn btn-danger" OnClick="DeleteButton_Click" />
+        <asp:Button runat="server" Text="Delete" ID="DeleteButton" CssClass="btn btn-danger" OnClick="DeleteButton_Click"
+            OnClientClick="return confirm('Do you really want to delete this user?');"
+             />
     </div>
     
     <div class="form-group">
@@ -79,7 +81,7 @@
 
                 <tr>
                     <th class="col-md-2">International:</th>
-                    <td class="col-md-6"><asp:Label ID="InternationalLabel" runat="server" Text='<%# (Boolean.Parse(Eval("International").ToString()) ? "Yes" : "No") %>' /></td>
+                    <td class="col-md-6"><asp:Label ID="InternationalLabel" runat="server" Text='<%# (Eval("International") is DBNull ? "" : Boolean.Parse(Eval("International").ToString()) ? "Yes" : "No") %>' /></td>
                 </tr>
 
                 <tr>
@@ -94,7 +96,7 @@
 
                 <tr>
                     <th class="col-md-2">Receiving Other Services:</th>
-                    <td class="col-md-6"><asp:Label ID="ReceivingLabel" runat="server" Text='<%# (Boolean.Parse(Eval("ReceivingServices").ToString()) ? "Yes" : "No") %>' /></td>
+                    <td class="col-md-6"><asp:Label ID="ReceivingLabel" runat="server" Text='<%# (Eval("ReceivingServices") is DBNull ? "" : Boolean.Parse(Eval("ReceivingServices").ToString()) ? "Yes" : "No") %>' /></td>
                 </tr>
 
                 <tr>
@@ -104,12 +106,12 @@
 
                 <tr>
                     <th class="col-md-2">DEGREES Program:</th>
-                    <td class="col-md-6"><asp:Label ID="DegreesProgramLabel" runat="server" Text='<%# (Boolean.Parse(Eval("DegreesProgram").ToString()) ? "Yes" : "No") %>' /></td>
+                    <td class="col-md-6"><asp:Label ID="DegreesProgramLabel" runat="server" Text='<%# (Eval("DegreesProgram") is DBNull ? "" : Boolean.Parse(Eval("DegreesProgram").ToString()) ? "Yes" : "No") %>' /></td>
                 </tr>
 
                 <tr>
                     <th class="col-md-2">SmartThinking:</th>
-                    <td class="col-md-6"><asp:Label ID="Label1" runat="server" Text='<%# (Boolean.Parse(Eval("SmartThinking").ToString()) ? "Yes" : "No") %>' /></td>
+                    <td class="col-md-6"><asp:Label ID="Label1" runat="server" Text='<%# (Eval("SmartThinking") is DBNull ? "" : Boolean.Parse(Eval("SmartThinking").ToString()) ? "Yes" : "No") %>' /></td>
                 </tr>
 
                 <tr>
@@ -124,23 +126,5 @@
     </asp:ListView>
 
   </div>
-
-  <div class="modal fade" id="dialog1" runat="server" visible="false">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        <p>One fine body&hellip;</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 </asp:Content>
