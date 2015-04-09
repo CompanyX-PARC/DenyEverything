@@ -57,8 +57,6 @@
             <asp:Label runat="server" AssociatedControlID="Major" CssClass="col-md-2 control-label">Major</asp:Label>
             <div class="col-md-10">
             <asp:TextBox runat="server" ID="Major" CssClass="form-control" TextMode="SingleLine" placeholder="Your Major..." />
-            <asp:RequiredFieldValidator runat="server" ControlToValidate="Major"
-                CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter your major." SetFocusOnError="true" />
             </div>
         </div>
 
