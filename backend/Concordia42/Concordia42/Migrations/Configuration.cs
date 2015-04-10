@@ -162,7 +162,7 @@ namespace Concordia42.Migrations
 
             context.Locations.AddOrUpdate(
                 l => l.locName,
-                new Location { locName = "Off Campus" },
+                new Location { locName = "Other" },
                 new Location { locName = "PARC HQ"},
                 new Location { locName = "Library"}
             );
