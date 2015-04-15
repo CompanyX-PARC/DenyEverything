@@ -3,7 +3,8 @@
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+    <div class="span7 text-center">
+    <h2><%: Title %></h2>
 
     <div>
         <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
@@ -12,48 +13,71 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="main col-md-10 col-sm-offset-2 text-center">
             <div class="form-horizontal">
-                <h4>Change your account settings</h4>
+                
                 <hr />
-                <dl class="dl-horizontal">
-                    <dt>Password:</dt>
-                    <dd>
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Change]" Visible="false" ID="ChangePassword" runat="server" />
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Create]" Visible="false" ID="CreatePassword" runat="server" />
-                    </dd>
-                    <dt>Edit Profile:</dt>
-                    <dd>
-                        <asp:HyperLink NavigateUrl="/Account/Profile" Text="[Edit Profile]" runat="server" />
-                    </dd>
-                    <%--
-                        Phone Numbers can used as a second factor of verification in a two-factor authentication system.
-                        See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                        for details on setting up this ASP.NET application to support two-factor authentication using SMS.
-                        Uncomment the following blocks after you have set up two-factor authentication
-                    --%>
-                    <%--
-                    <dt>Phone Number:</dt>
-                    <% if (HasPhoneNumber)
-                       { %>
-                    <dd>
-                        <asp:HyperLink NavigateUrl="/Account/AddPhoneNumber" runat="server" Text="[Add]" />
-                    </dd>
-                    <% }
-                       else
-                       { %>
-                    <dd>
-                        <asp:Label Text="" ID="PhoneNumber" runat="server" />
-                        <asp:HyperLink NavigateUrl="/Account/AddPhoneNumber" runat="server" Text="[Change]" /> &nbsp;|&nbsp;
-                        <asp:LinkButton Text="[Remove]" OnClick="RemovePhone_Click" runat="server" />
-                    </dd>
-                    <% } %>
-                    --%>
+                <div class="form-group" runat="server" id="PasswordDiv">
+                    <div class="col-md-10">
+                        <asp:Button ID="PasswordButton" runat="server" Text="Change Password" OnClick="PasswordButton_Click" CssClass="btn-primary btn btn-block"/>
+                    </div>
+                </div>
+                 <div class="form-group" runat="server" id="ManageDiv">
+                    <div class="col-md-10">
+                         <asp:Button ID="ManageButton" runat="server" Text="Edit Profile" OnClick="ManageButton_Click" CssClass="btn-primary btn btn-block"/>
+                    </div>
+                </div>
+                
+                
 
+                <%-- Role based content begins here --%>
+                <asp:LoginView runat="server" ViewStateMode="Disabled" ID="LoginViewControl">
+                    <RoleGroups>
+                        <asp:RoleGroup Roles="admin">
+                            <ContentTemplate>
+                                <div class="form-group" runat="server" id="AdminDiv1">
+                                   <div class="col-md-10"> 
+                                        <asp:Button ID="Button1" runat="server" Text="View Users" OnClick="Button1_Click" CssClass="btn-primary btn btn-block"/>
+                                    </div>
+                                </div>
+                                <div class="form-group" runat="server" id="AdminDiv2">
+                                   <div class="col-md-10">
+                                        <asp:Button ID="Button2" runat="server" Text="Create Account" OnClick="Button2_Click" CssClass="btn-primary btn btn-block"/>
+                                    </div>
+                                </div>
+                                <div class="form-group" runat="server" id="AdminDiv3">
+                                    <div class="col-md-10">
+                                        <asp:Button ID="Button3" runat="server" Text="Register User" OnClick="Button3_Click" CssClass="btn-primary btn btn-block"/>
+                                    </div>
+                                </div>
+                            </ContentTemplate>
+                        </asp:RoleGroup>
 
-                </dl>
+                        <asp:RoleGroup Roles="assistant">
+                            <ContentTemplate>
+                                <div class="form-group" runat="server" id="AssistantDiv">
+                                    <div class="col-md-10">
+                                        <asp:Button ID="Button4" runat="server" Text="Create User" OnClick="Button2_Click" CssClass="btn-primary btn btn-block" />
+                                    </div>
+                                </div>
+                            </ContentTemplate>
+                        </asp:RoleGroup>
+
+                        <asp:RoleGroup Roles="leader">
+                            <ContentTemplate>
+                                
+                            </ContentTemplate>
+                        </asp:RoleGroup>
+                
+                        <asp:RoleGroup Roles="student,verified">
+                            <ContentTemplate>
+                                
+                            </ContentTemplate>
+                        </asp:RoleGroup>
+                    </RoleGroups>
+                </asp:LoginView>
             </div>
         </div>
     </div>
-
+    
 </asp:Content>

@@ -51,6 +51,7 @@ namespace Concordia42.Account
             if (!IsPostBack)
             {
                 // Determine the sections to render
+                /*
                 if (HasPassword(manager))
                 {
                     ChangePassword.Visible = true;
@@ -60,7 +61,7 @@ namespace Concordia42.Account
                     CreatePassword.Visible = true;
                     ChangePassword.Visible = false;
                 }
-
+                */
                 // Render success message
                 var message = Request.QueryString["m"];
                 if (message != null)
@@ -124,6 +125,34 @@ namespace Concordia42.Account
             manager.SetTwoFactorEnabled(User.Identity.GetUserId(), true);
 
             Response.Redirect("/Account/Manage");
+        }
+
+        //password and edit profile buttons!
+        protected void PasswordButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Account/ManagePassword");
+        }
+
+        protected void ManageButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Account/ManagePassword");
+        }
+
+        //custom stuff, role based functions
+        //~ADMIN~
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/Webform1.aspx");
+        }
+        //~ADMIN/STAFF~
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/CreateAccount.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Account/Register.aspx");
         }
     }
 }
