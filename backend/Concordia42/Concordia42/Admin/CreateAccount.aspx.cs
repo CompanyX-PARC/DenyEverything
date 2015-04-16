@@ -7,11 +7,34 @@ using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using Concordia42.Models;
 using System.Data.Entity;
+using System.Collections.Generic;
+using System.Security.Claims;
+using System.Security.Principal;
+using System.Web.Security;
+using System.Web.UI.WebControls;
+using Microsoft.Owin;
+using Microsoft.AspNet.Identity.EntityFramework;
+
+
 
 namespace Concordia42.Admin
 {
     public partial class CreateAccount : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Context.GetOwinContext().Authentication.User.IsInRole("admin"))
+            {
+                StudentRoleLabel.Visible = false;
+                StudentRoleDropdown.Visible = false;
+            }
+            else
+            {
+                UserRoleLabel.Visible = false;
+                UserRoleDropdown.Visible = false;
+            }    
+        }
+
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();

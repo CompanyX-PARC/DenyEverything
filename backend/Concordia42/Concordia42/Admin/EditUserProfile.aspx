@@ -1,7 +1,6 @@
-﻿<%@ Page Title="Final Step" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Profile.aspx.cs" Inherits="Concordia42.Account.Profile" %>
-
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2><%: Title %></h2>
+﻿<%@ Page Title="Edit User Profile" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditUserProfile.aspx.cs" Inherits="Concordia42.Admin.EditUserProfile" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+       <h2><%: Title %></h2>
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
@@ -168,5 +167,7 @@
 
            </fieldset>
     </div>
+
+
 
 </asp:Content>

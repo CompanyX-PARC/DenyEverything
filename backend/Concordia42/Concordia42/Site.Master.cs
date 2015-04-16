@@ -145,6 +145,12 @@ namespace Concordia42
             
             Context.GetOwinContext().Authentication.SignOut();
         }
+
+        protected void swipeInButton_btn(object sender, LoginCancelEventArgs e)
+        {
+
+        }
+
     }
 
 }

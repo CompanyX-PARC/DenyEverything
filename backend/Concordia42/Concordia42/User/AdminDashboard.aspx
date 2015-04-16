@@ -9,4 +9,5 @@
         <asp:Button ID="Button2" runat="server" Text="Create Account" OnClick="Button2_Click"/>
         <asp:Button ID="Button3" runat="server" Text="Register User" OnClick="Button3_Click"/>
     </div>
+
 </asp:Content>

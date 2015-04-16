@@ -10,20 +10,28 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Concordia42.Models;
 
-namespace Concordia42.Account
+namespace Concordia42.Admin
 {
-    public partial class Profile : System.Web.UI.Page
+    public partial class EditUserProfile : System.Web.UI.Page
     {
         private ApplicationUserManager manager;
         private ApplicationUser user;
+       
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
             /* todo check roles */
             /* preload */
             manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            user = manager.FindById(User.Identity.GetUserId());
+            ///user = manager.FindById(User.Identity.GetUserId());
+            //user = manager.FindByEmail();
 
+            if (Request.QueryString["Email"] != null)
+            {
+                user = manager.FindByEmail(Request.QueryString["Email"]);
+            }
+            
             if (user != null)
             {
 
@@ -139,9 +147,10 @@ namespace Concordia42.Account
                     {
                         Response.Redirect("~/Account/Manage?m=ProfileUpdated");
                     }
-                   
+
                 }
             }
+
         }
     }
 }
