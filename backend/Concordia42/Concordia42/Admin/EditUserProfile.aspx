@@ -17,16 +17,14 @@
             <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label">Your Name</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" placeholder="First Name..." TextMode="SingleLine" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter your first name." ForeColor="Red" SetFocusOnError="true" />
+                
             </div>
         </div>
 
         <div class="form-group" runat="server" id="LastNameDiv">
             <div class="col-md-offset-2 col-md-10">
                 <asp:TextBox runat="server" ID="LastName" CssClass="form-control" placeholder="Last Name..." TextMode="SingleLine" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
-                    CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter your last name." ForeColor="Red" SetFocusOnError="true" />
+                
             </div>
         </div>
 
@@ -47,8 +45,7 @@
             <asp:Label runat="server" AssociatedControlID="EstimatedGradDate" CssClass="col-md-2 control-label">Graduation Date (Expected)</asp:Label>
             <div class="col-md-10">
             <asp:TextBox runat="server" ID="EstimatedGradDate" CssClass="form-control" TextMode="SingleLine" placeholder="Estimated Graduation Date..." ToolTip="For example, Fall 2015" />
-            <asp:RequiredFieldValidator runat="server" ControlToValidate="EstimatedGradDate"
-                CssClass="text-danger" Display="Dynamic" ErrorMessage="Your expected graduation date is required. Estimate if you are uncertain." SetFocusOnError="true" />
+            
                 </div>
         </div>
 
@@ -70,8 +67,7 @@
             <asp:Label runat="server" AssociatedControlID="Why" CssClass="col-md-2 control-label">Why are you seeking PARC services?</asp:Label>
             <div class="col-md-10">
             <asp:TextBox runat="server" ID="Why" CssClass="form-control" TextMode="SingleLine" placeholder="Why are you seeking PARC services?" ToolTip="Your reason for visiting PARC, e.g.: Tutoring" />
-            <asp:RequiredFieldValidator runat="server" ControlToValidate="Why"
-                CssClass="text-danger" Display="Dynamic" ErrorMessage="Please tell us why you need our services. This will help us help you!" SetFocusOnError="true" />
+           
                 </div>
         </div>
 
@@ -79,8 +75,7 @@
             <asp:Label runat="server" AssociatedControlID="WhatCourses" CssClass="col-md-2 control-label">What courses or subjects do you need assistance in?</asp:Label>
             <div class="col-md-10">
             <asp:TextBox runat="server" ID="WhatCourses" CssClass="form-control" placeholder="Enter courses or subjects..." TextMode="MultiLine" ToolTip="ie: Calculus, History, etc" Rows="3" />
-            <asp:RequiredFieldValidator runat="server" ControlToValidate="WhatCourses"
-                CssClass="text-danger" Display="Dynamic" ErrorMessage="Please tell us what you need help with." SetFocusOnError="true" />
+
              </div>
         </div>
         </fieldset>
