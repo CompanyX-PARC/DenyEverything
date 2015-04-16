@@ -182,6 +182,7 @@
     <Content Include="Admin\LoggedInUsers.aspx" />
     <Content Include="Admin\CreateAccount.aspx" />
     <Content Include="Admin\ExpandedUserInfo.aspx" />
+    <Content Include="Admin\SubjectList.aspx" />
     <Content Include="Admin\UserDetail.aspx" />
     <Content Include="Admin\WebForm1.aspx" />
     <Content Include="Contact.aspx" />
@@ -400,6 +401,13 @@
     </Compile>
     <Compile Include="Admin\ExpandedUserInfo.aspx.designer.cs">
       <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SubjectList.aspx.cs">
+      <DependentUpon>SubjectList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SubjectList.aspx.designer.cs">
+      <DependentUpon>SubjectList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
