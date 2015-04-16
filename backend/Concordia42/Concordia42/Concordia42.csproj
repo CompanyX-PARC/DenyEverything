@@ -97,6 +97,9 @@
     <Reference Include="WebDriver">
       <HintPath>..\packages\Selenium.WebDriver.2.45.0\lib\net40\WebDriver.dll</HintPath>
     </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>..\packages\Selenium.Support.2.45.0\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -470,9 +473,14 @@
     <Compile Include="Migrations\201504032022590_studentId.Designer.cs">
       <DependentUpon>201504032022590_studentId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504161734067_addedSubjectTable.cs" />
+    <Compile Include="Migrations\201504161734067_addedSubjectTable.Designer.cs">
+      <DependentUpon>201504161734067_addedSubjectTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -547,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504032022590_studentId.resx">
       <DependentUpon>201504032022590_studentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504161734067_addedSubjectTable.resx">
+      <DependentUpon>201504161734067_addedSubjectTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

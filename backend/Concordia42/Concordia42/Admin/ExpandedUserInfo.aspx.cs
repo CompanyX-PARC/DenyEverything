@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 using System.Data.SqlClient;
 using System.Configuration;
+using Concordia42.Models;
 
 namespace Concordia42.Admin
 {
@@ -29,6 +30,39 @@ namespace Concordia42.Admin
             //Send this information to the frontend
             UserSource.DataBind();    
 
+        }
+
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+            var db = new ApplicationDbContext();
+
+            var user = db.Users.FirstOrDefault(u => u.Email.Equals(bob));
+
+            if (user != null)
+            {
+                if (user.profile != null)
+                {
+                    db.Entry(user.profile).State = System.Data.Entity.EntityState.Deleted;
+                }
+
+                IList<ApplicationUser.Activity> tempList = new List<ApplicationUser.Activity>();
+
+                // this is stupid
+                foreach (Concordia42.Models.ApplicationUser.Activity a in user.activities)
+                {
+                    tempList.Add(a);
+                }
+
+                // this too is stupid
+                foreach (Concordia42.Models.ApplicationUser.Activity a in tempList)
+                {
+                    db.Entry(a).State = System.Data.Entity.EntityState.Deleted;
+                }
+
+                db.Entry(user).State = System.Data.Entity.EntityState.Deleted;
+                db.SaveChanges();
+                Response.Redirect("~/Admin/WebForm1?m=deleted");
+            }
         }
     }
 }

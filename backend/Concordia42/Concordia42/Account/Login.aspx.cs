@@ -77,7 +77,7 @@ namespace Concordia42.Account
                         break;
                     case SignInStatus.Failure:
                     default:
-                        FailureText.Text = "Invalid login attempt";
+                        FailureText.Text = "Couldn't log in! Do you have an account yet?";
                         ErrorMessage.Visible = true;
                         break;
                 }
