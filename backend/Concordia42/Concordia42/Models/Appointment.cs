@@ -10,7 +10,11 @@ namespace Concordia42.Models
 
         // apt id
         public int ID { get; set; }
+        // tutee
         public virtual ApplicationUser.StudentProfile Profile { get; set; }
+
+        public virtual ApplicationUser Tutor { get; set; }
+
         public virtual Subject Subject {get; set;}
         public Boolean ShowedUp { get; set; }
         public int Duration { get; set; }

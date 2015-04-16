@@ -185,6 +185,7 @@
     <Content Include="Admin\SubjectList.aspx" />
     <Content Include="Admin\UserDetail.aspx" />
     <Content Include="Admin\WebForm1.aspx" />
+    <Content Include="Appointment\ViewAppointments.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -423,6 +424,13 @@
     <Compile Include="Admin\LoggedInUsers.aspx.designer.cs">
       <DependentUpon>LoggedInUsers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Appointment\ViewAppointments.aspx.cs">
+      <DependentUpon>ViewAppointments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appointment\ViewAppointments.aspx.designer.cs">
+      <DependentUpon>ViewAppointments.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -492,6 +500,10 @@
     <Compile Include="Migrations\201504162027414_appointment.cs" />
     <Compile Include="Migrations\201504162027414_appointment.Designer.cs">
       <DependentUpon>201504162027414_appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504162036357_tutorField.cs" />
+    <Compile Include="Migrations\201504162036357_tutorField.Designer.cs">
+      <DependentUpon>201504162036357_tutorField.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -582,6 +594,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504162027414_appointment.resx">
       <DependentUpon>201504162027414_appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504162036357_tutorField.resx">
+      <DependentUpon>201504162036357_tutorField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
