@@ -477,9 +477,14 @@
     <Compile Include="Migrations\201504161734067_addedSubjectTable.Designer.cs">
       <DependentUpon>201504161734067_addedSubjectTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504161922073_officehour.cs" />
+    <Compile Include="Migrations\201504161922073_officehour.Designer.cs">
+      <DependentUpon>201504161922073_officehour.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\OfficeHour.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -558,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504161734067_addedSubjectTable.resx">
       <DependentUpon>201504161734067_addedSubjectTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504161922073_officehour.resx">
+      <DependentUpon>201504161922073_officehour.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
