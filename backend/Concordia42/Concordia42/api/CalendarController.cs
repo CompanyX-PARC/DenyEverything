@@ -10,6 +10,7 @@ namespace Concordia42.api
     public class CalendarController : ApiController
     {
         // GET api/<controller>
+        [Authorize(Roles="admin")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };

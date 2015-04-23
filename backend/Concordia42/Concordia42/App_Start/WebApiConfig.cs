@@ -12,6 +12,7 @@ namespace Concordia42
         {
             configuration.Routes.MapHttpRoute("API Default", "api/{controller}/{id}",
                 new { id = RouteParameter.Optional });
+            configuration.Formatters.JsonFormatter.SupportedMediaTypes.Add(new System.Net.Http.Headers.MediaTypeHeaderValue("text/html"));
         }
     }
 }
