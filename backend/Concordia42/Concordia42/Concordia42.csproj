@@ -223,6 +223,7 @@
     <Content Include="Admin\UserDetail.aspx" />
     <Content Include="Admin\WebForm1.aspx" />
     <Content Include="Appointment\ViewAppointments.aspx" />
+    <Content Include="Calendork.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -481,6 +482,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Calendork.aspx.cs">
+      <DependentUpon>Calendork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendork.aspx.designer.cs">
+      <DependentUpon>Calendork.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
