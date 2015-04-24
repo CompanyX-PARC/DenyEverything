@@ -3,7 +3,8 @@
     <script src="/Scripts/jquery-1.10.2.js"></script>
     <script src="/Scripts/jquery-1.10.2.js"></script>
     <script src="/Scripts/moment.js"></script>
-    <script src="/Scripts/fullcalendar.min.js"></script>
+    <script src="/Scripts/fullcalendar.min.js"></script>
+
     <div id="calendar">
 
     </div>
@@ -16,11 +17,12 @@
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
-                defaultView: 'month',
+                defaultView: 'agendaDay',
                 editable: true,
                 allDaySlot: false,
                 selectable: true,
-                slotMinutes: 15
+                slotMinutes: 15,
+                events: '/api/Calendar'
             });
         })
 </script>
