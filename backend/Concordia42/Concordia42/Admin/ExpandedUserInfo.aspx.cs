@@ -32,6 +32,11 @@ namespace Concordia42.Admin
 
         }
 
+        protected void EditButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/EditUserProfile.aspx?Email="+bob.ToString());
+        }
+
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
             var db = new ApplicationDbContext();
@@ -61,7 +66,7 @@ namespace Concordia42.Admin
 
                 db.Entry(user).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();
-                Response.Redirect("~/Admin/WebForm1?m=deleted");
+                Response.Redirect("~/Admin/WebForm1?m=DeleteSuccess");
             }
         }
     }

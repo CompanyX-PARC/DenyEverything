@@ -13,6 +13,15 @@ namespace Concordia42.Admin {
     public partial class WebForm1 {
         
         /// <summary>
+        /// successMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder successMessage;
+        
+        /// <summary>
         /// UserSource control.
         /// </summary>
         /// <remarks>

@@ -2,6 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
  <h2>Registered Students</h2>
 
+    <div>
+        <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
+            <p class="text-success"><%: SuccessMessage %></p>
+        </asp:PlaceHolder>
+    </div>
+
     <asp:SqlDataSource ID="UserSource" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Email], [FirstName], [LastName] FROM [AspNetUsers]"></asp:SqlDataSource> 
         <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped table-bordered" AllowPaging="True" PageSize="3" ForeColor="Black" AutoGenerateColumns ="False" DataSourceID="UserSource" AllowSorting="True">
             <Columns>

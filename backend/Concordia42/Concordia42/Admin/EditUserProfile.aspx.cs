@@ -36,6 +36,7 @@ namespace Concordia42.Admin
             {
 
                 /* hide the name fields if this is the user doesn't have a profile */
+                /*
                 if (user.profile == null)
                 {
                     FirstNameDiv.Visible = false;
@@ -46,7 +47,7 @@ namespace Concordia42.Admin
                     Page.Title = "Update Profile";
                     FinishBtn.Text = "Update";
                 }
-
+                */
                 if (!IsPostBack)
                 {
                     if (user.profile == null) { user.profile = new ApplicationUser.StudentProfile(); }
@@ -86,7 +87,11 @@ namespace Concordia42.Admin
             {
 
                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var user = manager.FindById(User.Identity.GetUserId());
+                //var user = manager.FindById(User.Identity.GetUserId());
+                if (Request.QueryString["Email"] != null)
+                {
+                    user = manager.FindByEmail(Request.QueryString["Email"]);
+                }
 
                 if (user != null)
                 {
@@ -141,11 +146,11 @@ namespace Concordia42.Admin
                     manager.Update(user);
                     if (createdNew)
                     {
-                        Response.Redirect("~/Account/Manage?m=ProfileCreated");
+                        Response.Redirect("~/Admin/WebForm1?m=CreateSuccess");
                     }
                     else
                     {
-                        Response.Redirect("~/Account/Manage?m=ProfileUpdated");
+                        Response.Redirect("~/Admin/WebForm1?m=UpdateSuccess");
                     }
 
                 }

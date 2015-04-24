@@ -62,7 +62,8 @@ namespace Concordia42.Account
                         }
                         else
                         {
-                            IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                            //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                            Response.Redirect("~/Account/Manage");
                         }
                    
                         break;
