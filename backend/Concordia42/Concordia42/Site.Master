@@ -9,9 +9,13 @@
     <title><%: Page.Title %> - Concordia</title>
 
     <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/jquery") %>
+        <%: Scripts.Render("~/bundles/moment") %>
+        <%: Scripts.Render("~/bundles/fullcalendarjs") %>
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:bundlereference runat="server" path="~/Content/fullcalendarcss" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
