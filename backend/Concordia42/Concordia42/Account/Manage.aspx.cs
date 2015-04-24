@@ -135,7 +135,8 @@ namespace Concordia42.Account
 
         protected void ManageButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Account/ManagePassword");
+            //Response.Redirect("~/Account/ManagePassword");
+            Response.Redirect("~/Account/Profile.aspx");
         }
 
         //custom stuff, role based functions
