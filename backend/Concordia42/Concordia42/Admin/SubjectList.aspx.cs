@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Concordia42.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,26 @@ namespace Concordia42.Admin
         {
 
         }
+
+        protected void AddButton_Click(object sender, EventArgs e)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            Subject s = new Subject();
+            TextBox departmentBox = (TextBox)GridView1.FooterRow.FindControl("TextBox4");
+            TextBox numberBox = (TextBox)GridView1.FooterRow.FindControl("TextBox5");
+            TextBox descriptionBox = (TextBox)GridView1.FooterRow.FindControl("TextBox6");
+
+            s.Department = departmentBox.Text.Trim();
+            s.Number = numberBox.Text.Trim();
+            s.Description = descriptionBox.Text.Trim();
+            //db.Entry(s).State = System.Data.Entity.EntityState.Added;
+
+            db.Subjects.Add(s);
+            db.SaveChanges();
+
+            GridView1.DataBind();
+        }
     }
+
+
 }
