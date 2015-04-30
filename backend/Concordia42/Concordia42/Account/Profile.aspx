@@ -9,10 +9,27 @@
     <div class="form-horizontal">
        <fieldset>
         <legend>
-            Please fill out the following information.
+            Please enter the following information.
         </legend>
 
         <asp:ValidationSummary runat="server" CssClass="text-danger" Visible="False" />
+
+        <div class="form-group" runat="server" id="FirstNameDiv">
+            <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label">Your Name</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" placeholder="First Name..." TextMode="SingleLine" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName"
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter your first name." ForeColor="Red" SetFocusOnError="true" />
+            </div>
+        </div>
+
+        <div class="form-group" runat="server" id="LastNameDiv">
+            <div class="col-md-offset-2 col-md-10">
+                <asp:TextBox runat="server" ID="LastName" CssClass="form-control" placeholder="Last Name..." TextMode="SingleLine" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
+                    CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter your last name." ForeColor="Red" SetFocusOnError="true" />
+            </div>
+        </div>
 
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="classLevel" CssClass="col-md-2 control-label">Class Level</asp:Label>
@@ -40,8 +57,6 @@
             <asp:Label runat="server" AssociatedControlID="Major" CssClass="col-md-2 control-label">Major</asp:Label>
             <div class="col-md-10">
             <asp:TextBox runat="server" ID="Major" CssClass="form-control" TextMode="SingleLine" placeholder="Your Major..." />
-            <asp:RequiredFieldValidator runat="server" ControlToValidate="Major"
-                CssClass="text-danger" Display="Dynamic" ErrorMessage="Please enter your major." SetFocusOnError="true" />
             </div>
         </div>
 
@@ -148,7 +163,7 @@
 
 
         <div class="form-group">
-            <asp:Button runat="server" Text="Finish &raquo;" CssClass="btn btn-primary" ID="FinishBtn" OnClick="FinishBtn_Click" />
+            <asp:Button runat="server" Text="Update" CssClass="btn btn-primary" ID="FinishBtn" OnClick="FinishBtn_Click" />
         </div>
 
            </fieldset>

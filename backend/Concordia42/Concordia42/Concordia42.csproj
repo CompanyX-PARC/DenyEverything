@@ -64,7 +64,44 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -93,6 +130,12 @@
     </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver">
+      <HintPath>..\packages\Selenium.WebDriver.2.45.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>..\packages\Selenium.Support.2.45.0\lib\net40\WebDriver.Support.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -172,21 +215,28 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\Verify.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\EditUserProfile.aspx" />
+    <Content Include="Admin\LoggedInUsers.aspx" />
+    <Content Include="Admin\CreateAccount.aspx" />
     <Content Include="Admin\ExpandedUserInfo.aspx" />
+    <Content Include="Admin\SubjectList.aspx" />
     <Content Include="Admin\UserDetail.aspx" />
     <Content Include="Admin\WebForm1.aspx" />
+    <Content Include="Appointment\ViewAppointments.aspx" />
+    <Content Include="Calendork.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Errors\AbandonShip.aspx" />
-    <Content Include="Errors\ConcordiaError.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrontDesk\CardSwipe.aspx" />
+    <Content Include="FrontDesk\VerifyUser.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -221,6 +271,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Swipe.aspx" />
+    <Content Include="User\AdminDashboard.aspx" />
+    <Content Include="User\SIDashboard.aspx" />
+    <Content Include="User\StaffDashboard.aspx" />
+    <Content Include="User\StudentDashboard.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -361,6 +416,24 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditUserProfile.aspx.cs">
+      <DependentUpon>EditUserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditUserProfile.aspx.designer.cs">
+      <DependentUpon>EditUserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LoggedInUsers.aspx.cs">
+      <DependentUpon>LoggedInUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CreateAccount.aspx.designer.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ExpandedUserInfo.aspx.cs">
       <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -368,12 +441,12 @@
     <Compile Include="Admin\ExpandedUserInfo.aspx.designer.cs">
       <DependentUpon>ExpandedUserInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\UserDetail.aspx.cs">
-      <DependentUpon>UserDetail.aspx</DependentUpon>
+    <Compile Include="Admin\SubjectList.aspx.cs">
+      <DependentUpon>SubjectList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\UserDetail.aspx.designer.cs">
-      <DependentUpon>UserDetail.aspx</DependentUpon>
+    <Compile Include="Admin\SubjectList.aspx.designer.cs">
+      <DependentUpon>SubjectList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
@@ -381,6 +454,21 @@
     </Compile>
     <Compile Include="Admin\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserDetail.aspx.cs">
+      <DependentUpon>UserDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoggedInUsers.aspx.designer.cs">
+      <DependentUpon>LoggedInUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\CalendarController.cs" />
+    <Compile Include="Appointment\ViewAppointments.aspx.cs">
+      <DependentUpon>ViewAppointments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appointment\ViewAppointments.aspx.designer.cs">
+      <DependentUpon>ViewAppointments.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -393,6 +481,14 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Calendork.aspx.cs">
+      <DependentUpon>Calendork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendork.aspx.designer.cs">
+      <DependentUpon>Calendork.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -407,50 +503,61 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Errors\AbandonShip.aspx.cs">
-      <DependentUpon>AbandonShip.aspx</DependentUpon>
+    <Compile Include="FrontDesk\CardSwipe.aspx.cs">
+      <DependentUpon>CardSwipe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Errors\AbandonShip.aspx.designer.cs">
-      <DependentUpon>AbandonShip.aspx</DependentUpon>
+    <Compile Include="FrontDesk\CardSwipe.aspx.designer.cs">
+      <DependentUpon>CardSwipe.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Errors\ConcordiaError.aspx.cs">
-      <DependentUpon>ConcordiaError.aspx</DependentUpon>
+    <Compile Include="FrontDesk\VerifyUser.aspx.cs">
+      <DependentUpon>VerifyUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Errors\ConcordiaError.aspx.designer.cs">
-      <DependentUpon>ConcordiaError.aspx</DependentUpon>
+    <Compile Include="FrontDesk\VerifyUser.aspx.designer.cs">
+      <DependentUpon>VerifyUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503051849158_Initial.cs" />
-    <Compile Include="Migrations\201503051849158_Initial.Designer.cs">
-      <DependentUpon>201503051849158_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201503202056209_initial.cs" />
+    <Compile Include="Migrations\201503202056209_initial.Designer.cs">
+      <DependentUpon>201503202056209_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503051855396_Initial1.cs" />
-    <Compile Include="Migrations\201503051855396_Initial1.Designer.cs">
-      <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
+    <Compile Include="Migrations\201503202108005_nullableLoc.cs" />
+    <Compile Include="Migrations\201503202108005_nullableLoc.Designer.cs">
+      <DependentUpon>201503202108005_nullableLoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503062310166_forLocation.cs" />
-    <Compile Include="Migrations\201503062310166_forLocation.Designer.cs">
-      <DependentUpon>201503062310166_forLocation.cs</DependentUpon>
+    <Compile Include="Migrations\201503271918454_multipleActivities.cs" />
+    <Compile Include="Migrations\201503271918454_multipleActivities.Designer.cs">
+      <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503062321482_newLocTable.cs" />
-    <Compile Include="Migrations\201503062321482_newLocTable.Designer.cs">
-      <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
+    <Compile Include="Migrations\201504032022590_studentId.cs" />
+    <Compile Include="Migrations\201504032022590_studentId.Designer.cs">
+      <DependentUpon>201504032022590_studentId.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503121802088_addedName.cs" />
-    <Compile Include="Migrations\201503121802088_addedName.Designer.cs">
-      <DependentUpon>201503121802088_addedName.cs</DependentUpon>
+    <Compile Include="Migrations\201504161734067_addedSubjectTable.cs" />
+    <Compile Include="Migrations\201504161734067_addedSubjectTable.Designer.cs">
+      <DependentUpon>201504161734067_addedSubjectTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201503131831316_activityTable.cs" />
-    <Compile Include="Migrations\201503131831316_activityTable.Designer.cs">
-      <DependentUpon>201503131831316_activityTable.cs</DependentUpon>
+    <Compile Include="Migrations\201504161922073_officehour.cs" />
+    <Compile Include="Migrations\201504161922073_officehour.Designer.cs">
+      <DependentUpon>201504161922073_officehour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504162027414_appointment.cs" />
+    <Compile Include="Migrations\201504162027414_appointment.Designer.cs">
+      <DependentUpon>201504162027414_appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504162036357_tutorField.cs" />
+    <Compile Include="Migrations\201504162036357_tutorField.Designer.cs">
+      <DependentUpon>201504162036357_tutorField.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\OfficeHour.cs" />
+    <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -467,6 +574,41 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Swipe.aspx.cs">
+      <DependentUpon>Swipe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Swipe.aspx.designer.cs">
+      <DependentUpon>Swipe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\SIDashboard.aspx.cs">
+      <DependentUpon>SIDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\SIDashboard.aspx.designer.cs">
+      <DependentUpon>SIDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\StaffDashboard.aspx.cs">
+      <DependentUpon>StaffDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\StaffDashboard.aspx.designer.cs">
+      <DependentUpon>StaffDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\StudentDashboard.aspx.cs">
+      <DependentUpon>StudentDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\StudentDashboard.aspx.designer.cs">
+      <DependentUpon>StudentDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -479,23 +621,29 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503051849158_Initial.resx">
-      <DependentUpon>201503051849158_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503202056209_initial.resx">
+      <DependentUpon>201503202056209_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503051855396_Initial1.resx">
-      <DependentUpon>201503051855396_Initial1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503202108005_nullableLoc.resx">
+      <DependentUpon>201503202108005_nullableLoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503062310166_forLocation.resx">
-      <DependentUpon>201503062310166_forLocation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503271918454_multipleActivities.resx">
+      <DependentUpon>201503271918454_multipleActivities.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503062321482_newLocTable.resx">
-      <DependentUpon>201503062321482_newLocTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504032022590_studentId.resx">
+      <DependentUpon>201504032022590_studentId.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503121802088_addedName.resx">
-      <DependentUpon>201503121802088_addedName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504161734067_addedSubjectTable.resx">
+      <DependentUpon>201504161734067_addedSubjectTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503131831316_activityTable.resx">
-      <DependentUpon>201503131831316_activityTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504161922073_officehour.resx">
+      <DependentUpon>201504161922073_officehour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504162027414_appointment.resx">
+      <DependentUpon>201504162027414_appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504162036357_tutorField.resx">
+      <DependentUpon>201504162036357_tutorField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

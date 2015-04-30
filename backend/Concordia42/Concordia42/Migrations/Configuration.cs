@@ -64,7 +64,9 @@ namespace Concordia42.Migrations
                 PasswordHash = hasher.HashPassword(name),
                 Email = "admin@concordia.com",
                 EmailConfirmed = true,
-                SecurityStamp = Guid.NewGuid().ToString()
+                SecurityStamp = Guid.NewGuid().ToString(),
+                FirstName = "Admin",
+                LastName = "User"
             };
 
             admin.Roles.Add(new IdentityUserRole { RoleId = adminRole.Id, UserId = admin.Id });
@@ -78,7 +80,9 @@ namespace Concordia42.Migrations
                 PasswordHash = hasher.HashPassword(name),
                 Email = "assistant@concordia.com",
                 EmailConfirmed = true,
-                SecurityStamp = Guid.NewGuid().ToString()
+                SecurityStamp = Guid.NewGuid().ToString(),
+                FirstName = "Assistant",
+                LastName = "User"
             };
 
             assistant.Roles.Add(new IdentityUserRole { RoleId = assistantRole.Id, UserId = assistant.Id });
@@ -92,7 +96,9 @@ namespace Concordia42.Migrations
                 PasswordHash = hasher.HashPassword(name),
                 Email = "leader@concordia.com",
                 EmailConfirmed = true,
-                SecurityStamp = Guid.NewGuid().ToString()
+                SecurityStamp = Guid.NewGuid().ToString(),
+                FirstName = "SI Leader",
+                LastName = "User"
             };
 
             leader.Roles.Add(new IdentityUserRole { RoleId = leaderRole.Id, UserId = leader.Id });
@@ -106,7 +112,9 @@ namespace Concordia42.Migrations
                 PasswordHash = hasher.HashPassword(name),
                 Email = "student@concordia.com",
                 EmailConfirmed = true,
-                SecurityStamp = Guid.NewGuid().ToString()
+                SecurityStamp = Guid.NewGuid().ToString(),
+                FirstName = "Student",
+                LastName = "User"
             };
 
             student.Roles.Add(new IdentityUserRole { RoleId = studentRole.Id, UserId = student.Id });
@@ -154,7 +162,7 @@ namespace Concordia42.Migrations
 
             context.Locations.AddOrUpdate(
                 l => l.locName,
-                new Location { locName = "Home" },
+                new Location { locName = "Other" },
                 new Location { locName = "PARC HQ"},
                 new Location { locName = "Library"}
             );
