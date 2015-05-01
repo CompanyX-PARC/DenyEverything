@@ -11,7 +11,7 @@ namespace Concordia42.Models
         // apt id
         public int ID { get; set; }
         // tutee
-        public virtual ApplicationUser.StudentProfile Profile { get; set; }
+        public virtual ApplicationUser Tutee { get; set; }
 
         public virtual ApplicationUser Tutor { get; set; }
 

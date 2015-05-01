@@ -17,6 +17,18 @@
                     center: 'title',
                     right: 'month,agendaWeek,agendaDay'
                 },
+                minTime: "08:00:00", // effects week and day view
+                maxTime: "17:00:00",
+                contentHeight: 'auto', // calendar will grow auto-magically
+                weekends: false, // will hide Saturdays and Sundays
+                businessHours:  // true, display business hours
+                {
+                    start: '08:00',
+                    end: '17:00',
+                    dow: [1, 2, 3, 4, 5],
+                },
+                editable: true,
+                fixedWeekCount: false, // # of weeks displayed depends on the month
                 defaultView: 'agendaDay',
                 editable: true,
                 allDaySlot: false,

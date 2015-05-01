@@ -552,6 +552,10 @@
     <Compile Include="Migrations\201504162036357_tutorField.Designer.cs">
       <DependentUpon>201504162036357_tutorField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504302230168_changedTutee.cs" />
+    <Compile Include="Migrations\201504302230168_changedTutee.Designer.cs">
+      <DependentUpon>201504302230168_changedTutee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
@@ -619,6 +623,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="SI\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201503202056209_initial.resx">
@@ -644,6 +649,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504162036357_tutorField.resx">
       <DependentUpon>201504162036357_tutorField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504302230168_changedTutee.resx">
+      <DependentUpon>201504302230168_changedTutee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
