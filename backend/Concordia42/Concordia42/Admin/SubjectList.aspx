@@ -2,28 +2,62 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Subject List</h2>
 
-    The PARC can offer services for the following Subject.
-    <div class="form-group">
-    <asp:Button ID="Button1" runat="server" Text="Add Subject" CssClass="btn btn-primary"/>
-    <asp:Button ID="Button2" runat="server" Text="Add Subject" CssClass="btn "/>
-    <asp:Button ID="Button3" runat="server" Text="Add Subject" CssClass="btn btn-info"/>
-    <asp:Button ID="Button4" runat="server" Text="Add Subject" CssClass="btn btn-success"/>
-    <asp:Button ID="Button5" runat="server" Text="Add Subject" CssClass="btn btn-danger"/>
-    <asp:Button ID="Button8" runat="server" Text="Add Subject" CssClass="btn btn-success"/>
-    <asp:Button ID="Button9" runat="server" Text="Add Subject" CssClass="btn btn-warning"/>
-    <asp:Button ID="Button10" runat="server" Text="Add Subject" CssClass="btn btn-primary"/>
-    <asp:Button ID="Button7" runat="server" Text="Add Subject" CssClass="btn"/>
-    <asp:Button ID="Button6" runat="server" Text="Add Subject" CssClass="btn btn-danger"/>
-    </div>
-
-    <asp:GridView ID="GridView1" runat="server" CssClass="table table-striped" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="ID" ShowFooter="True">
+    The PARC can<asp:GridView ID="GridView1" runat="server" CssClass="table table-striped" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="ID" ShowFooter="True">
         <Columns>
-            <asp:BoundField DataField="Department" HeaderText="Department" SortExpression="Department" />
-            <asp:BoundField DataField="Number" HeaderText="Number" SortExpression="Number" />
-            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            <asp:TemplateField HeaderText="Department" SortExpression="Department">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Department") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="TextBox4" runat="server" placeholder="Department..."></asp:TextBox>
+                </FooterTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Department") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Number" SortExpression="Number">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Number") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="TextBox5" runat="server" placeholder="Number..."></asp:TextBox>
+                </FooterTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("Number") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Description" SortExpression="Description">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Description") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="TextBox6" runat="server" placeholder="Description..."></asp:TextBox>
+                </FooterTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField ShowHeader="False">
+                <EditItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
+                    &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
+                </EditItemTemplate>
+                <FooterTemplate>
+                    <asp:Button ID="AddButton" runat="server" CommandName="Insert" OnClick="AddButton_Click" Text="Add" />
+                </FooterTemplate>
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit"></asp:LinkButton>
+                    &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete"></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+            
+            
         </Columns>
+        <FooterStyle BackColor="#81BEF7" Font-Bold="True" ForeColor="White" />
     </asp:GridView>
+
+
+    &nbsp;offer services for the following Subject.
 
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Department], [Number], [Description], [ID] FROM [Subjects] ORDER BY [Department], [Number]" DeleteCommand="DELETE FROM [Subjects] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Subjects] ([Department], [Number], [Description]) VALUES (@Department, @Number, @Description)" UpdateCommand="UPDATE [Subjects] SET [Department] = @Department, [Number] = @Number, [Description] = @Description WHERE [ID] = @ID">
@@ -42,5 +76,9 @@
             <asp:Parameter Name="ID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-
+    <%-- 
+    <div class="form-group">
+        <asp:Button ID="Button6" runat="server" Text="Add Subject" CssClass="btn btn-danger"/>
+    </div>
+    --%>
 </asp:Content>
