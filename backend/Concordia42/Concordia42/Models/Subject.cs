@@ -18,7 +18,8 @@ namespace Concordia42.Models
         public String Number { get; set; }
         public String Description { get; set; }
         public Boolean offered;
-        public virtual ICollection<ApplicationUser> Users { get; set; }
+        //public virtual ICollection<ApplicationUser> Users { get; set; }
+        public virtual ICollection<SubjectUser> SubjectUsers { get; set; }
         public virtual ICollection<Appointment> Appointments { get; set; }
     }
 }
