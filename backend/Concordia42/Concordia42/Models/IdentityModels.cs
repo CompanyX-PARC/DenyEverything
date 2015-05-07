@@ -37,7 +37,7 @@ namespace Concordia42.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public virtual ICollection<Subject> Subjects { get; set; }
+        public virtual ICollection<SubjectUser> SubjectUsers { get; set; }
 
         public virtual ICollection<OfficeHour> OfficeHours { get; set; }
 
@@ -115,6 +115,7 @@ namespace Concordia42.Models
         public DbSet<ApplicationUser.Activity> Activities { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<OfficeHour> OfficeHours { get; set; }
+        public DbSet<SubjectUser> SubjectUsers { get; set; }
     }
 }
 

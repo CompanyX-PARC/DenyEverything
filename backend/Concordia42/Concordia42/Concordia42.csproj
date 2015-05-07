@@ -212,6 +212,7 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\SIManageSubjects.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\Verify.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
@@ -395,6 +396,13 @@
     <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
       <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\SIManageSubjects.aspx.cs">
+      <DependentUpon>SIManageSubjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\SIManageSubjects.aspx.designer.cs">
+      <DependentUpon>SIManageSubjects.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
       <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -552,12 +560,17 @@
     <Compile Include="Migrations\201504162036357_tutorField.Designer.cs">
       <DependentUpon>201504162036357_tutorField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505012228395_whatever.cs" />
+    <Compile Include="Migrations\201505012228395_whatever.Designer.cs">
+      <DependentUpon>201505012228395_whatever.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\OfficeHour.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\SubjectUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -644,6 +657,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504162036357_tutorField.resx">
       <DependentUpon>201504162036357_tutorField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505012228395_whatever.resx">
+      <DependentUpon>201505012228395_whatever.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
