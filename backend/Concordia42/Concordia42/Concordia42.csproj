@@ -222,6 +222,7 @@
     <Content Include="Admin\SubjectList.aspx" />
     <Content Include="Admin\UserDetail.aspx" />
     <Content Include="Admin\WebForm1.aspx" />
+    <Content Include="Appointment\SelectSubject.aspx" />
     <Content Include="Appointment\ViewAppointments.aspx" />
     <Content Include="Calendork.aspx" />
     <Content Include="Contact.aspx" />
@@ -463,6 +464,13 @@
       <DependentUpon>LoggedInUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="api\CalendarController.cs" />
+    <Compile Include="Appointment\SelectSubject.aspx.cs">
+      <DependentUpon>SelectSubject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appointment\SelectSubject.aspx.designer.cs">
+      <DependentUpon>SelectSubject.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Appointment\ViewAppointments.aspx.cs">
       <DependentUpon>ViewAppointments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -623,6 +631,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="NewFolder1\" />
     <Folder Include="SI\" />
   </ItemGroup>
   <ItemGroup>
