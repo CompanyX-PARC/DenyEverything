@@ -116,6 +116,7 @@ namespace Concordia42.Models
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<OfficeHour> OfficeHours { get; set; }
         public DbSet<SubjectUser> SubjectUsers { get; set; }
+        public DbSet<Appointment> Appointments { get; set; }
     }
 }
 
