@@ -3,7 +3,7 @@ namespace Concordia42.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class changedTutee : DbMigration
+    public partial class what : DbMigration
     {
         public override void Up()
         {

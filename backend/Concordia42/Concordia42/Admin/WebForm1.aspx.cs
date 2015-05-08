@@ -36,5 +36,11 @@ namespace Concordia42.Admin
 
             }
         }
+
+        protected void btnRedirect_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("ExpandedUserInfo.aspx");
+            //Response.Redirect("~/Admin/ExpandedUserInfo.aspx");
+        }
     }
 }

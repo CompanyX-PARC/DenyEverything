@@ -13,7 +13,7 @@ namespace Concordia42.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201504302230168_changedTutee"; }
+            get { return "201505071946330_changedTutee"; }
         }
         
         string IMigrationMetadata.Source
