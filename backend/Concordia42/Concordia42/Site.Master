@@ -84,7 +84,7 @@
                     --%>
                     <LoggedInTemplate>  
                         <ul class="nav navbar-nav">
-                            <li><a runat="server" href="~/">Appointments</a></li>
+                            <li><a runat="server" href="~/Appointment/SelectSubject.aspx">Appointments</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <asp:Label runat="server" ID="UserNameLabel" Text="User Name"></asp:Label>!</a></li>
