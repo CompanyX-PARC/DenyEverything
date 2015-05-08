@@ -166,6 +166,11 @@ namespace Concordia42.Account
             Response.Redirect("~/Calendork.aspx");
         }
 
+        protected void Button42_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Account/SIManageSubjects.aspx");
+        }
+
         private void LoadSubjects()
         {
             var db = new ApplicationDbContext();

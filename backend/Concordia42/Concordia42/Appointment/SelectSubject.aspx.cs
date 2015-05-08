@@ -81,15 +81,19 @@ namespace Concordia42.Appointment
         {
             ApplicationDbContext db = new ApplicationDbContext();
             int id = Convert.ToInt32(ClassList.SelectedValue);
-            var bob = db.SubjectUsers.FirstOrDefault(o => o.SubjectID == id);
+            List<SubjectUser> bob = db.SubjectUsers.Where(o => o.SubjectID == id).ToList();
             
-            if (bob != null) {
-                string userId = bob.UserID;
-                var bob2 = db.Users.Where(o => o.Id.Equals(userId)).ToList();
+            if (bob.Count != 0) {
+                List<ApplicationUser> users = new List<ApplicationUser>();
+                foreach (SubjectUser bob2 in bob) { 
+                    string userId = bob2.UserID;
+                    users.Add(db.Users.FirstOrDefault(o => o.Id.Equals(userId)));
 
+                }
+                
                 TutorList.DataValueField = "Id";
                 TutorList.DataTextField = "FirstName";
-                TutorList.DataSource = bob2;
+                TutorList.DataSource = users;
                 TutorList.DataBind();
 
                 TutorFieldset.Visible = true;
