@@ -50,6 +50,11 @@
                                         <asp:Button ID="Button3" runat="server" Text="Register User" OnClick="Button3_Click" CssClass="btn-primary btn btn-block"/>
                                     </div>
                                 </div>
+                                <div class="form-group" runat="server" id="AdminDiv4">
+                                    <div class="col-md-10">
+                                        <asp:Button ID="Button5" runat="server" Text="Add Subject" OnClick="Button5_Click" CssClass="btn-primary btn btn-block"/>
+                                    </div>
+                                </div>
                             </ContentTemplate>
                         </asp:RoleGroup>
 
@@ -71,7 +76,11 @@
                 
                         <asp:RoleGroup Roles="student,verified">
                             <ContentTemplate>
-                                
+                                <div class="form-group" runat="server" id="StudentDiv">
+                                    <div class="col-md-10">
+                                        <asp:Button ID="Button6" runat="server" Text="View Calendar" OnClick="Button6_Click" CssClass="btn-primary btn btn-block" />
+                                    </div>
+                                </div>
                             </ContentTemplate>
                         </asp:RoleGroup>
                     </RoleGroups>
