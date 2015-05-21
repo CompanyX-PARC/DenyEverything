@@ -56,7 +56,7 @@ namespace Concordia42.Appointment
             db.Appointments.Add(newAppointment);
             db.SaveChanges();
 
-            Response.Redirect("~/Account/Manage");
+            Response.Redirect("~/Calendork");
         }
 
         protected void SubjectList_SelectedIndexChanged(object sender, EventArgs e)

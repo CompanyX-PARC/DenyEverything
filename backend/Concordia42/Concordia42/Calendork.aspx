@@ -101,7 +101,8 @@
                         end: '2015-05-21T10:15:00',
                         constraint: 'businessHours'
                     }
-                ]
+                ],
+                events: "/api/Calendar/"
             })
         })
     </script>
