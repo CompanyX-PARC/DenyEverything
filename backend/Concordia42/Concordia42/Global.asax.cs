@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Web.Http;
 
 namespace Concordia42
 {
@@ -14,8 +15,12 @@ namespace Concordia42
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
+
+            WebApiConfig.Register(GlobalConfiguration.Configuration);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            
         }
     }
 }

@@ -14,9 +14,11 @@ namespace Concordia42.User
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        
+        protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Account/Register.aspx");
+            Response.Redirect("~/Admin/CreateAccount.aspx");
         }
+
     }
 }

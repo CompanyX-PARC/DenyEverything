@@ -51,6 +51,7 @@ namespace Concordia42.Account
             if (!IsPostBack)
             {
                 // Determine the sections to render
+                /*
                 if (HasPassword(manager))
                 {
                     ChangePassword.Visible = true;
@@ -60,7 +61,7 @@ namespace Concordia42.Account
                     CreatePassword.Visible = true;
                     ChangePassword.Visible = false;
                 }
-
+                */
                 // Render success message
                 var message = Request.QueryString["m"];
                 if (message != null)
@@ -124,6 +125,83 @@ namespace Concordia42.Account
             manager.SetTwoFactorEnabled(User.Identity.GetUserId(), true);
 
             Response.Redirect("/Account/Manage");
+        }
+
+        //password and edit profile buttons!
+        protected void PasswordButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Account/ManagePassword");
+        }
+
+        protected void ManageButton_Click(object sender, EventArgs e)
+        {
+            //Response.Redirect("~/Account/ManagePassword");
+            Response.Redirect("~/Account/Profile.aspx");
+        }
+
+        //custom stuff, role based functions
+        //~ADMIN~
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/Webform1.aspx");
+        }
+        //~ADMIN/STAFF~
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/CreateAccount.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Account/Register.aspx");
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Admin/SubjectList.aspx");
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Calendork.aspx");
+        }
+
+        protected void Button42_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Account/SIManageSubjects.aspx");
+        }
+
+        private void LoadSubjects()
+        {
+            var db = new ApplicationDbContext();
+            db.Subjects.ToList();
+
+
+           /*
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT SubjectID, SubjectName FROM Students.dbo.Subjects", con);
+                    adapter.Fill(subjects);
+
+                    ddlSubject.DataSource = subjects;
+                    ddlSubject.DataTextField = "SubjectNamne";
+                    ddlSubject.DataValueField = "SubjectID";
+                    ddlSubject.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the error
+                }
+
+            }
+
+            // Add the initial item - you can add this even if the options from the
+            // db were not successfully loaded
+            ddlSubject.Items.Insert(0, new ListItem("<Select Subject>", "0"));
+            */
         }
     }
 }

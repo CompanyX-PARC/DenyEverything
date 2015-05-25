@@ -12,6 +12,12 @@ namespace Concordia42
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkID=303951
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                    "~/Scripts/jquery-1.10.2.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/moment").Include(
+                   "~/Scripts/moment.js"));
+            
             bundles.Add(new ScriptBundle("~/bundles/WebFormsJs").Include(
                             "~/Scripts/WebForms/WebForms.js",
                             "~/Scripts/WebForms/WebUIValidation.js",
@@ -33,6 +39,16 @@ namespace Concordia42
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
+
+            bundles.Add(new StyleBundle("~/Content/fullcalendarcss").Include(
+                "~/Content/themes/jquery.ui.all.css",
+                "~/Content/fullcalendar.css"));
+
+            //Calendar Script file
+
+            bundles.Add(new ScriptBundle("~/bundles/fullcalendarjs").Include(
+                        "~/Scripts/jquery-1.10.2.js",
+                        "~/Scripts/fullcalendar.min.js"));
 
             ScriptManager.ScriptResourceMapping.AddDefinition(
                 "respond",

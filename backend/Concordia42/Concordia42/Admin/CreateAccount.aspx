@@ -3,6 +3,7 @@
     <h2>
         Create Account
     </h2>
+
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
@@ -68,6 +69,15 @@
                         <asp:ListItem>SI Leader</asp:ListItem>
                         <asp:ListItem>Staff</asp:ListItem>
                         <asp:ListItem>Administrator</asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <asp:Label runat="server" ID="StudentRoleLabel" CssClass="col-md-2 control-label">Account Type</asp:Label>
+                <div class="col-md-10">
+                    <asp:DropDownList runat="server" ID="StudentRoleDropdown" CssClass="form-control" SetFocusOnError="true" >
+                        <asp:ListItem>Student</asp:ListItem>
                     </asp:DropDownList>
                 </div>
             </div>

@@ -3,7 +3,7 @@
     
 <h2>User Details</h2>
     <div class="form-group">
-        <asp:Button runat="server" Text="Edit" ID="EditButton" CssClass="btn btn-primary" />
+        <asp:Button runat="server" Text="Edit" ID="EditButton" CssClass="btn btn-primary" OnClick="EditButton_Click"/>
         <asp:Button runat="server" Text="Delete" ID="DeleteButton" CssClass="btn btn-danger" OnClick="DeleteButton_Click"
             OnClientClick="return confirm('Do you really want to delete this user?');"
              />

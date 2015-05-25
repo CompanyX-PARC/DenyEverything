@@ -121,6 +121,12 @@ namespace Concordia42.Migrations
 
             context.Users.AddOrUpdate(l => l.UserName, student);
 
+            var subject = new Subject();
+            subject.Number = "101";
+            subject.Department = "DEF";
+            subject.Description = "Default Subject";
+            context.Subjects.AddOrUpdate(l => l.Description, subject);
+
             base.Seed(context);
             
              

@@ -86,7 +86,7 @@
         </div>
         </fieldset>
         <fieldset>
-        <legend>Optional Information.</legend>
+        <legend>Additional Information.</legend>
             <p>
                 Providing the following information is volunatry; it may be used by the department to assess our effectiveness, or it may be used for research purposes. Don't worry! We wont share this data with anyone else.
             </p>
@@ -163,7 +163,7 @@
 
 
         <div class="form-group">
-            <asp:Button runat="server" Text="Finish &raquo;" CssClass="btn btn-primary" ID="FinishBtn" OnClick="FinishBtn_Click" />
+            <asp:Button runat="server" Text="Update" CssClass="btn btn-primary" ID="FinishBtn" OnClick="FinishBtn_Click" />
         </div>
 
            </fieldset>

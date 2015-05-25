@@ -24,7 +24,6 @@ namespace Concordia42.Account
             manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             user = manager.FindById(User.Identity.GetUserId());
 
-
             if (user != null)
             {
 
@@ -37,7 +36,7 @@ namespace Concordia42.Account
                 else
                 {
                     Page.Title = "Update Profile";
-                    FinishBtn.Text = "Update &raquo;";
+                    FinishBtn.Text = "Update";
                 }
 
                 if (!IsPostBack)
